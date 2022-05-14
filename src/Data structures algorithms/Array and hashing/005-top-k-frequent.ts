@@ -20,7 +20,7 @@ function topKFrequent(numsList: number[], k: number): number[] {
     for (let j = 0; j < groupedNumsArray.length; j++) {
       topK.push(groupedNumsArray[j]);
       if (topK.length === k) {
-        return topK
+        return topK;
       }
     }
   }

@@ -4,8 +4,8 @@ const checkValidAnagram = (s: string, t: string) => {
     return false;
   }
 
-  const countS = {}
-  const countT = {}
+  const countS = {};
+  const countT = {};
 
   for (let index = 0; index < s.length; index++) {
     countS[s[index]] = 1 + (countS[s[index]] || 0);
@@ -13,27 +13,29 @@ const checkValidAnagram = (s: string, t: string) => {
   }
 
   for (const key in countS) {
-    if (countS[key] !== countT[key])
-      return false;
+    if (countS[key] !== countT[key]) return false;
   }
 
   return true;
-}
+};
 
-checkValidAnagram("foo", "ofo");
-checkValidAnagram("bar", "zba");
+checkValidAnagram('foo', 'ofo');
+checkValidAnagram('bar', 'zba');
 
 const sortingCallback = (a: string, b: string) => {
   const aLower = a.toLowerCase();
   const bLower = b.toLowerCase();
 
   return aLower < bLower ? -1 : 1;
-}
+};
 const checkValidAnagramSort = (s: string, t: string) => {
   const sortedS = [...s];
   const sortedT = [...t];
 
-  return sortedS.sort(sortingCallback).join() === sortedT.sort(sortingCallback).join();
-}
+  return (
+    sortedS.sort(sortingCallback).join() ===
+    sortedT.sort(sortingCallback).join()
+  );
+};
 
-console.log(checkValidAnagramSort("foo", "ofo"));
+console.log(checkValidAnagramSort('foo', 'ofo'));
