@@ -1,0 +1,45 @@
+// binary tree
+function maxDepth(root: TreeNode | null): number {
+  if (!root) return 0;
+  return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+}
+
+// with queue - BFS
+function maxDepth(root: TreeNode | null): number {
+  if (!root) return 0;
+
+  let level = 0;
+  const queue: TreeNode[] = [];
+  queue.push(root);
+
+  while (queue.length) {
+    for (const i in queue) {
+      const node = queue.shift();
+      if (node?.left) queue.push(node.left);
+      if (node?.right) queue.push(node.right);
+
+      ++level;
+    }
+  }
+
+  return level;
+}
+
+// pre iterative DFS
+function maxDepth(root: TreeNode | null): number {
+  if (!root) return 0;
+
+  const stack: [node: TreeNode, depth: number][] = [[root, 1]];
+  let res = 1;
+
+  while (stack.length) {
+    const [node, depth] = stack.pop();
+    if (node) {
+      res = Math.max(res, depth);
+      stack.push([node.left, depth + 1]);
+      stack.push([node.right, depth + 1]);
+    }
+  }
+
+  return res;
+}

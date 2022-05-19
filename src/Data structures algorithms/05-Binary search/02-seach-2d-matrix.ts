@@ -8,14 +8,15 @@ function searchMatrix(matrix: number[][], target: number): boolean {
     const m = (t + b - ((t + b) % 2)) / 2;
     if (target > matrix[m][matrix[m].length - 1]) {
       t = m + 1;
-    } else if (target < matrix[m][matrix[m].length - 1]) {
+    } else if (target < matrix[m][0]) {
       b = m - 1;
     } else {
       break;
     }
   }
 
-  // if the while loop ended
+  // if the while loop ended NOT coz of break (i.e. we found it)
+  // instead it ended coz t got higher than b
   if (!(t <= b)) {
     return false;
   }
