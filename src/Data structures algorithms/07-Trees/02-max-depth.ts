@@ -13,13 +13,14 @@ function maxDepthBfs(root: TreeNode | null): number {
   queue.push(root);
 
   while (queue.length) {
-    for (const i in queue) {
+    const qLen = queue.length;
+    for (let i = 0; i < qLen; i++) {
       const node = queue.shift();
       if (node?.left) queue.push(node.left);
       if (node?.right) queue.push(node.right);
-
-      ++level;
     }
+
+    ++level;
   }
 
   return level;
