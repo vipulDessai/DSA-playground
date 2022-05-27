@@ -26,7 +26,7 @@ function maxDepthBfs(root: TreeNode | null): number {
   return level;
 }
 
-// pre iterative DFS
+// iterative DFS
 function maxDepthDfs(root: TreeNode | null): number {
   if (!root) return 0;
 
