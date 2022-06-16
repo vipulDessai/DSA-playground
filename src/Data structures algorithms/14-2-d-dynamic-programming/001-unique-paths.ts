@@ -13,3 +13,5 @@ function uniquePaths(m: number, n: number): number {
 
   return resultingRow[0];
 }
+
+uniquePaths(7, 8);
