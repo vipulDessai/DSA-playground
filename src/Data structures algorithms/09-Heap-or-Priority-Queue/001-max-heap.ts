@@ -23,9 +23,9 @@ class MaxHeap {
         const m = (l + r - ((l + r) % 2)) / 2;
         if (n === arr[m]) return [...arr.slice(0, m), n, ...arr.slice(m)];
         else if (n > arr[m]) {
-          l = m + 1;
-        } else {
           r = m - 1;
+        } else {
+          l = m + 1;
         }
       }
 
@@ -40,6 +40,10 @@ class MaxHeap {
   getAll() {
     return this.sortedDsc;
   }
+
+  pop() {
+    return this.sortedDsc.shift();
+  }
 }
 
 const mHeap = new MaxHeap();
@@ -52,6 +56,14 @@ mHeap.push(5);
 mHeap.push(3);
 
 const getClosetIndex = (arr: number[], target: number) => {};
+
+console.log(mHeap.getMax());
+console.log(mHeap.getAll());
+
+mHeap.pop();
+mHeap.pop();
+mHeap.push(4);
+mHeap.pop();
 
 console.log(mHeap.getMax());
 console.log(mHeap.getAll());
