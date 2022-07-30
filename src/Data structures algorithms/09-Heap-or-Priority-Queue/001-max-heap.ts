@@ -3,15 +3,16 @@
  * and every insert will be repeated n number of times (i.e. for n size of array)
  * @class MaxHeap
  * @function push(number):void
- * @function getMax():number
- * @function getAll():number[]
+ * @function get:max():number
+ * @function get:array():number[]
+ * @function pop():number
+ * @function get:size():number
  */
-class MaxHeap {
+export class MaxHeap {
   sortedDsc: number[];
   constructor() {
     this.sortedDsc = [];
   }
-
   push(n: number) {
     this.sortedDsc = sortAndPushMax(this.sortedDsc, n);
 
@@ -32,38 +33,36 @@ class MaxHeap {
       return [...arr.slice(0, l), n, ...arr.slice(l)];
     }
   }
-
-  getMax() {
+  get max() {
     return this.sortedDsc[0];
   }
-
-  getAll() {
+  get array() {
     return this.sortedDsc;
   }
-
   pop() {
     return this.sortedDsc.shift();
   }
+  get size() {
+    return this.sortedDsc.length;
+  }
 }
 
-const mHeap = new MaxHeap();
-mHeap.push(30);
-mHeap.push(1);
-mHeap.push(25);
-mHeap.push(3);
-mHeap.push(66);
-mHeap.push(5);
-mHeap.push(3);
+// const mHeap = new MaxHeap();
+// mHeap.push(30);
+// mHeap.push(1);
+// mHeap.push(25);
+// mHeap.push(3);
+// mHeap.push(66);
+// mHeap.push(5);
+// mHeap.push(3);
 
-const getClosetIndex = (arr: number[], target: number) => {};
+// console.log(mHeap.peekMax());
+// console.log(mHeap.peekAll());
 
-console.log(mHeap.getMax());
-console.log(mHeap.getAll());
+// mHeap.pop();
+// mHeap.pop();
+// mHeap.push(4);
+// mHeap.pop();
 
-mHeap.pop();
-mHeap.pop();
-mHeap.push(4);
-mHeap.pop();
-
-console.log(mHeap.getMax());
-console.log(mHeap.getAll());
+// console.log(mHeap.peekMax());
+// console.log(mHeap.peekAll());
