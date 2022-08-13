@@ -15,9 +15,9 @@ function searchMatrix(matrix: number[][], target: number): boolean {
     }
   }
 
-  // if the while loop ended NOT coz of break (i.e. we found it)
-  // instead it ended coz t got higher than b
-  if (!(t <= b)) {
+  // check if while loop ended without the target being in
+  // the matrix
+  if (t > b) {
     return false;
   }
 
