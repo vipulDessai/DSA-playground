@@ -4,7 +4,7 @@ function revStr(str) {
 
   for (let i = 0; i < str.length; i++) {
     const char = str[i];
-    if (char === " ") {
+    if (char === ' ') {
       splitString.push(joinString(word));
       word = [];
     } else {
@@ -16,16 +16,16 @@ function revStr(str) {
     }
   }
 
-  let reversedString = "";
+  let reversedString = '';
   for (let i = splitString.length - 1; i > -1; --i) {
-    reversedString += splitString[i] + " ";
+    reversedString += splitString[i] + ' ';
   }
 
   return reversedString;
 }
 
 const joinString = (strArray) => {
-  let seperatedString = "";
+  let seperatedString = '';
   for (let j = 0; j < strArray.length; j++) {
     seperatedString += strArray[j];
   }
@@ -33,4 +33,4 @@ const joinString = (strArray) => {
   return seperatedString;
 };
 
-console.log(revStr("hello how are you")); // should print 'you are how hello'
+console.log(revStr('hello how are you')); // should print 'you are how hello'
