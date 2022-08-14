@@ -1,3 +1,5 @@
+import { TreeNode } from './000-binary-tree-from-array';
+
 // breadth first saerch is also called level order traversal
 function levelOrder(root: TreeNode | null): number[][] {
   const res: number[][] = [];

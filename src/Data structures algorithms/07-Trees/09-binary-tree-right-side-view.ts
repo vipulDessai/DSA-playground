@@ -1,3 +1,5 @@
+import { TreeNode } from './000-binary-tree-from-array';
+
 function rightSideView(root: TreeNode | null): number[] {
   const res: number[] = [];
   const q = [root];

@@ -1,3 +1,5 @@
+import { TreeNode } from './000-binary-tree-from-array';
+
 // Math
 // height = 1 + max(left, right)
 // diameter = left + right + 2

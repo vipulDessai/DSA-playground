@@ -1,3 +1,5 @@
+import { TreeNode } from './000-binary-tree-from-array';
+
 function isBalanced(root: TreeNode | null): boolean {
   function dfs_getHeight(root: TreeNode | null): [boolean, number] {
     if (!root) return [true, 0];

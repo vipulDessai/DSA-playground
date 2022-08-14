@@ -1,3 +1,5 @@
+import { TreeNode } from './000-binary-tree-from-array';
+
 function lowestCommonAncestor(
   root: TreeNode | null,
   p: TreeNode | null,

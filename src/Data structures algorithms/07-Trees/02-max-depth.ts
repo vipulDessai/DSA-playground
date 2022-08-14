@@ -1,3 +1,5 @@
+import { TreeNode } from './000-binary-tree-from-array';
+
 // binary tree
 function maxDepth(root: TreeNode | null): number {
   if (!root) return 0;
