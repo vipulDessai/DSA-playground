@@ -1,12 +1,8 @@
-// Definition for singly-linked list.
-class ListNode {
-  val: number;
-  next: ListNode | null;
-  constructor(val?: number, next?: ListNode | null) {
-    this.val = val === undefined ? 0 : val;
-    this.next = next === undefined ? null : next;
-  }
-}
+import { LinkedList, ListNode } from './000-linked-list-from-array';
+
+var myLinkedList = new LinkedList([1, 2, 3, 4]);
+const reversedList = reverseList(myLinkedList.singlyList);
+console.log(reversedList);
 
 function reverseList_iterative(head: ListNode | null): ListNode | null {
   let prev: ListNode | null = null,

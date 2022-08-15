@@ -10,15 +10,15 @@ export class TreeNode {
 }
 
 export class BinaryTree {
-  treeArr: (number | null)[];
-  bTreeInternal: TreeNode | null;
-  buildTree(i: number) {
-    const value = this.treeArr[i];
+  #treeArr: (number | null)[];
+  #bTreeInternal: TreeNode | null;
+  #buildTree(i: number) {
+    const value = this.#treeArr[i];
     if (value) {
       const node = new TreeNode();
       node.val = value;
-      node.left = this.buildTree(i * 2 + 1);
-      node.right = this.buildTree(i * 2 + 2);
+      node.left = this.#buildTree(i * 2 + 1);
+      node.right = this.#buildTree(i * 2 + 2);
 
       return node;
     } else {
@@ -26,11 +26,11 @@ export class BinaryTree {
     }
   }
   get bTree() {
-    return this.bTreeInternal;
+    return this.#bTreeInternal;
   }
   constructor(a: (number | null)[]) {
-    this.treeArr = a;
-    this.bTreeInternal = this.buildTree(0);
+    this.#treeArr = a;
+    this.#bTreeInternal = this.#buildTree(0);
   }
 }
 
