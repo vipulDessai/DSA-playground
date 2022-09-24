@@ -12,7 +12,7 @@ function subsetsWithDup(nums: number[]): number[][] {
     backtrack(i + 1, subset);
     subset.pop();
 
-    // // all subsets that dont include nums[i]
+    // all subsets that dont include nums[i]
     while (i + 1 < nums.length && nums[i] === nums[i + 1]) {
       i++;
     }
