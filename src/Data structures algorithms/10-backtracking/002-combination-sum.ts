@@ -21,4 +21,4 @@ function combinationSum(candidates: number[], target: number): number[][] {
   return res;
 }
 
-console.log(combinationSum([2, 3, 6, 7], 7));
+console.log(combinationSum([2, 3, 6], 7));
