@@ -19,3 +19,27 @@ play with Data structures and Algorithms
 n is 16
 16 -> 8 -> 4 -> 2 -> 1
 ```
+
+# advanced DSA
+Kadane's Algorithm
+Sliding Window Fixed Size
+Sliding Window Variable Size
+Two Pointers
+Prefix Sums
+Fast and Slow Pointers
+Trie
+Union-Find
+Segment Tree
+Iterative DFS
+Two Heaps
+Subsets
+Combinations
+Permutations
+Dijkstra's
+Prim's
+Kruskal's
+Topological Sort
+0 / 1 Knapsack
+Unbounded Knapsack
+LCS
+Palindrome
