@@ -1,35 +1,30 @@
 function exist(board: string[][], word: string): boolean {
   const rows = board.length;
   const cols = board[0].length;
-  const path = new Set();
 
-  function dfs(r: number, c: number, i: number) {
+  function dfs(board: string[][], r: number, c: number, i: number) {
     if (i === word.length) return true;
 
-    if (
-      r < 0 ||
-      c < 0 ||
-      r >= rows ||
-      c >= cols ||
-      board[r][c] !== word[i] ||
-      path.has(JSON.stringify([r, c]))
-    )
+    if (r < 0 || c < 0 || r >= rows || c >= cols || board[r][c] !== word[i])
       return false;
 
-    path.add(JSON.stringify([r, c]));
+    const letter = board[r][c];
+    board[r][c] = '*';
+
     const res =
-      dfs(r + 1, c, i + 1) ||
-      dfs(r - 1, c, i + 1) ||
-      dfs(r, c + 1, i + 1) ||
-      dfs(r, c - 1, i + 1);
-    path.delete(JSON.stringify([r, c]));
+      dfs(board, r + 1, c, i + 1) ||
+      dfs(board, r - 1, c, i + 1) ||
+      dfs(board, r, c + 1, i + 1) ||
+      dfs(board, r, c - 1, i + 1);
+
+    board[r][c] = letter;
 
     return res;
   }
 
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < cols; j++) {
-      if (dfs(i, j, 0)) return true;
+      if (dfs(board, i, j, 0)) return true;
     }
   }
 
@@ -43,6 +38,6 @@ console.log(
       ['S', 'F', 'C', 'S'],
       ['A', 'D', 'E', 'E'],
     ],
-    'ABD',
+    'ABCCS',
   ),
 );
