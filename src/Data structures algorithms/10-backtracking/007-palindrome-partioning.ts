@@ -13,21 +13,20 @@ function isPali(s: string, l: number, r: number) {
 
 function partition(s: string): string[][] {
   const res: string[][] = [];
-  const part: string[] = [];
 
-  function dfs(i: number) {
+  function dfs(i: number, part: string[]) {
     if (i >= s.length) return res.push([...part]);
 
     for (let j = i; j < s.length; j++) {
       if (isPali(s, i, j)) {
         part.push(s.substring(i, j + 1));
-        dfs(j + 1);
+        dfs(j + 1, part);
         part.pop();
       }
     }
   }
 
-  dfs(0);
+  dfs(0, []);
 
   return res;
 }
