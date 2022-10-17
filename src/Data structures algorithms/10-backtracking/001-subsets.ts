@@ -3,22 +3,22 @@ function subsets(nums: number[]): number[][] {
 
   const subset: number[] = [];
 
-  function dfs(i: number) {
+  function dfs(i: number, cur: number[]) {
     if (i >= nums.length) {
-      res.push([...subset]);
+      res.push([...cur]);
       return;
     }
 
     // decision to include nums[i]
-    subset.push(nums[i]);
-    dfs(i + 1);
+    cur.push(nums[i]);
+    dfs(i + 1, cur);
 
     // decision NOT to include nums[i]
-    subset.pop();
-    dfs(i + 1);
+    cur.pop();
+    dfs(i + 1, cur);
   }
 
-  dfs(0);
+  dfs(0, []);
 
   return res;
 }
