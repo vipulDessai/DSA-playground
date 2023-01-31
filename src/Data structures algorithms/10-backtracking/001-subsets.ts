@@ -1,8 +1,6 @@
 function subsets(nums: number[]): number[][] {
   const res: number[][] = [];
 
-  const subset: number[] = [];
-
   function dfs(i: number, cur: number[]) {
     if (i >= nums.length) {
       res.push([...cur]);
