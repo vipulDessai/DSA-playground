@@ -10,11 +10,13 @@ function constructTree(
   }
 
   const m = (l + h - ((l + h) % 2)) / 2;
+  const leftChildPos =  2 * pos + 1;
+  const rightChildPos =  2 * pos + 2;
 
-  constructTree(input, segTree, l, m, 2 * pos + 1);
-  constructTree(input, segTree, m + 1, h, 2 * pos + 2);
+  constructTree(input, segTree, l, m, leftChildPos);
+  constructTree(input, segTree, m + 1, h, rightChildPos);
 
-  return (segTree[pos] = Math.min(segTree[2 * pos + 1], segTree[2 * pos + 2]));
+  return (segTree[pos] = Math.min(segTree[leftChildPos], segTree[rightChildPos]));
 }
 
 const input = [-1, 2, 4, 0];
