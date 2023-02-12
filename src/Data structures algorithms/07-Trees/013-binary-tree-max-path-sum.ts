@@ -2,7 +2,23 @@
 
 import { BinaryTree, TreeNode } from './000-binary-tree-from-array';
 
-var myBTree = new BinaryTree([-10, 9, 20, null, null, 15, 7]);
+var myBTree = new BinaryTree([
+  -10,
+  9,
+  20,
+  null,
+  null,
+  15,
+  7,
+  null,
+  null,
+  null,
+  null,
+  2,
+  3,
+  null,
+  null,
+]);
 
 console.log(maxPathSum(myBTree.bTree));
 
