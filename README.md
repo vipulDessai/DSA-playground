@@ -20,6 +20,11 @@ n is 16
 16 -> 8 -> 4 -> 2 -> 1
 ```
 
+# random list
+
+## string manipulation
+- KMP Algorithm for Pattern Searching
+
 # advanced DSA
 Kadane's Algorithm
 Sliding Window Fixed Size
