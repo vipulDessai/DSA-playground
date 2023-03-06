@@ -1,4 +1,4 @@
-function rob(nums: number[]): number {
+function rob2(nums: number[]): number {
   function houseRobber1(nums: number[]) {
     let r1 = 0,
       r2 = 0;

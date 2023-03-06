@@ -1,4 +1,4 @@
-function rob(nums: number[]): number {
+function rob1(nums: number[]): number {
   let r1 = 0,
     r2 = 0;
 
@@ -11,4 +11,4 @@ function rob(nums: number[]): number {
   return r2;
 }
 
-rob([1, 2, 3, 1]);
+rob1([1, 2, 3, 1]);
