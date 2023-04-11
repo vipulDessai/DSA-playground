@@ -3,7 +3,7 @@
 1
 11
 
-2<sup>11</sup> = 2048 so 2+0+4+8 = 14 = 1+4 =5
+2<sup>11</sup> = 2048 so 2+0+4+8 = 14 = 1+4 = 5
 
 # problem 2 - Leetcode : Minimum cost to merge stones
 

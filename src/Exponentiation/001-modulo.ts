@@ -15,7 +15,7 @@ function factorial() {
 // console.log(factorial());
 
 // const MOD = 1000000007;
-const MOD = 10;
+const MOD = 1000;
 function fastExp(base, exp) {
   if (exp == 1) {
     return base;
