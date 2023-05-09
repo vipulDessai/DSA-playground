@@ -21,7 +21,7 @@ function revStr(str) {
     reversedString += splitString[i] + ' ';
   }
 
-  return reversedString;
+  return reversedString.trim();
 }
 
 const joinString = (strArray) => {
@@ -33,4 +33,4 @@ const joinString = (strArray) => {
   return seperatedString;
 };
 
-console.log(revStr('hello how are you')); // should print 'you are how hello'
+console.log(revStr('  hello how   are you  ')); // should print 'you are how hello'
