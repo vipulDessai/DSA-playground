@@ -1,3 +1,6 @@
+// this is a bad approach
+// by using an array, its just increasing the space
+// can be acheoved using just a string
 function revStr(str) {
   const splitString: string[] = [];
   let word: string[] = [];
