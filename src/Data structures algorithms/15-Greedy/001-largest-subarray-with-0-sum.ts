@@ -20,3 +20,5 @@ function largestSubArray(nums: number[]): number {
 
   return max;
 }
+
+console.log(largestSubArray([1, -1, 3, 2, -2, -8, 1, 7, 10, 23]));
