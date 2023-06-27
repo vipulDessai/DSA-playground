@@ -13,7 +13,7 @@ function largestSubArray(nums: number[]): number {
       if (sumMap.has(prefixSum)) {
         max = Math.max(max, i - sumMap.get(prefixSum));
       } else {
-        sumMap.set(sumMap, i);
+        sumMap.set(prefixSum, i);
       }
     }
   }

@@ -25,6 +25,9 @@ n is 16
 ## string manipulation
 - KMP Algorithm for Pattern Searching
 
+# basic list
+<img src="ref/dsa-list.png">
+
 # advanced DSA
 Kadane's Algorithm
 Sliding Window Fixed Size
