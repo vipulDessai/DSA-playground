@@ -32,6 +32,17 @@ for(int i = 0; i < rLen; ++i) {
 
 # binary search
 - find the minimum in a rotated sorted array
+```c#
+while (l < r) {
+    int m = ((l + r) - ((l + r) % 2)) / 2;
+    if(nums[m] > nums[r]) {
+        l = m + 1;
+    }
+    else {
+        r = m;
+    }
+}
 ```
 
-```
+# linked list
+- LRU cache
