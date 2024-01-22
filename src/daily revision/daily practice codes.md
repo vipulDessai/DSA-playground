@@ -1,5 +1,21 @@
 # create subarray
 - using brute force
+```c#
+int[] arr = new int[] {3, 1, 2, 4};
+int n = arr.Length;
+int i = 0;
+List<string> subSets = new List<List<int>>();
+while (i < n) {
+    StringBuilder c = new StringBuilder();
+    for(int j = i; j < n; j++) {
+        c.Append(arr[j].ToString());
+
+        subSets.Add(c.ToString());
+    }
+    
+    ++i;
+}
+```
 
 # find sum
 - kadane's algorithm
@@ -8,7 +24,7 @@
 - BFS, DFS
 
 # Subsequnces
-- using knapsack
+- using knapsack (bottoms up)
 
 # divide array in groups of some number
 - min difficulty to schedule jobs
@@ -46,3 +62,6 @@ while (l < r) {
 
 # linked list
 - LRU cache
+
+# stack
+- monotonic stack
