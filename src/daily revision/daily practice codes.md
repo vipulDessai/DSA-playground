@@ -22,6 +22,8 @@ while (i < n) {
 
 # BST
 - BFS, DFS
+- practice simple dfs and bfs
+    - example - https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree
 
 # Subsequnces
 - using knapsack (bottoms up)
