@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
+
 function lengthOfLongestSubstring(s: string): number {
   const charSet = new Set();
   let l = 0;

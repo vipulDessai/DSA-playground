@@ -1,4 +1,8 @@
-# create subarray
+# Array
+
+## mutate
+
+### create subarray
 - using brute force
 ```c#
 int[] arr = new int[] {3, 1, 2, 4};
@@ -17,7 +21,18 @@ while (i < n) {
 }
 ```
 
-# find sum
+### divide array in groups of some number
+- min difficulty to schedule jobs
+
+## create permutation of array recursively
+- k inverse pairs array - https://leetcode.com/problems/k-inverse-pairs-array/description
+
+## compare
+
+### compare arrays
+- sliding window problem - find all anagram - https://leetcode.com/problems/find-all-anagrams-in-a-string/description
+
+# Find some target sum
 - kadane's algorithm
 
 # BST
@@ -27,9 +42,7 @@ while (i < n) {
 
 # Subsequnces
 - using knapsack (bottoms up)
-
-# divide array in groups of some number
-- min difficulty to schedule jobs
+- find int array subsequence without repeat
 
 # Path traversal
 - dijkstra algorithm 
