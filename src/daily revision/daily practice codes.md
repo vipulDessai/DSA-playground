@@ -41,6 +41,14 @@ while (i < n) {
     - example - https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree
 
 # Subsequnces
+
+## with repeat item
+- find a subsequence by repeating the item in an array
+    - example of subsequence - [1, 4, 9] => [9, 9, 9], [9, 9, 4], [9, 9, 1], [9, 4, 4], [9, 4, 1]...[1, 1, 1]
+    - perfect square - https://leetcode.com/problems/perfect-squares
+    - coin change - https://leetcode.com/problems/coin-change
+
+## without repeat item
 - using knapsack (bottoms up)
 - find int array subsequence without repeat
 
