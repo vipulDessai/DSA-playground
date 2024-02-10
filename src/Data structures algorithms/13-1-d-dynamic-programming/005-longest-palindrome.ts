@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/longest-palindromic-substring/
 function longestPalindrome(s: string): string {
   let left = 0,
     right = 0;
