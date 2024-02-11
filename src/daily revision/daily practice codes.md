@@ -19,6 +19,11 @@ while (i < n) {
     
     ++i;
 }
+// Output
+// i = 0 => 3, 31, 312, 3124
+// i = 1 => 1, 12, 124
+// i = 2 => 2, 24
+// i = 3 => 4
 ```
 
 ### divide array in groups of some number
