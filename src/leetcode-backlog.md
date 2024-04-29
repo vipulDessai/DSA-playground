@@ -14,3 +14,6 @@
 # meta
 - https://leetcode.com/problems/merge-k-sorted-lists/description/
 - https://leetcode.com/problems/merge-sorted-array/description/
+
+# bitwise manipulations
+- https://leetcode.com/problems/minimum-number-of-operations-to-make-array-xor-equal-to-k
