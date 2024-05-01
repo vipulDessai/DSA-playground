@@ -17,3 +17,4 @@
 
 # bitwise manipulations
 - https://leetcode.com/problems/minimum-number-of-operations-to-make-array-xor-equal-to-k
+- https://leetcode.com/problems/number-of-wonderful-substrings/description
