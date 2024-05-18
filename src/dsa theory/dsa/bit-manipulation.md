@@ -1,0 +1,1 @@
+https://leetcode.com/discuss/study-guide/5159716/all-types-of-patterns-for-bits-manipulations-and-how-to-use-it
