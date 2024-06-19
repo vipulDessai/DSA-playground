@@ -19,5 +19,8 @@
 - https://leetcode.com/problems/minimum-number-of-operations-to-make-array-xor-equal-to-k
 - https://leetcode.com/problems/number-of-wonderful-substrings/description
 
+# disjoint set
+- https://leetcode.com/problems/find-if-path-exists-in-graph
+
 # binary search
 https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/solutions/769703/python-clear-explanation-powerful-ultimate-binary-search-template-solved-many-problems
