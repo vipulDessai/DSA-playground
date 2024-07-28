@@ -1,3 +1,9 @@
+# string
+
+## string manipulation
+
+- KMP Algorithm for Pattern Searching
+
 # Array
 
 ## mutate
@@ -42,11 +48,18 @@ while (i < n) {
 
 - sliding window problem - find all anagram - https://leetcode.com/problems/find-all-anagrams-in-a-string/description
 
-# Find some target sum
+## Find some target sum
 
 - kadane's algorithm
 
-# BST
+## Sort
+
+- O(n \* log n)
+  - radix
+  - merge
+  - heap
+
+# BST (binary search tree)
 
 - BFS, DFS
 - practice simple dfs and bfs
@@ -69,8 +82,12 @@ while (i < n) {
 # graph traversal
 
 - dijkstra algorithm
-  - using prioiry queue
+  - using priority queue
+    - https://leetcode.com/problems/network-delay-time/description/
 - when dijktra fails - due to negetive (infinite) loop - use bellman ford
+  - https://leetcode.com/problems/cheapest-flights-within-k-stops/description
+- floyd warshall
+  - https://leetcode.com/problems/minimum-cost-to-convert-string-i/solutions/5539929/easy-explanation-floyd-warshall-algorithm-java-c-python-javascript-go-rust
 
 # 2d array
 
@@ -78,7 +95,7 @@ while (i < n) {
 
 ```c#
 int rLen = matches.Length;
-int cLen = matches.Length;
+int cLen = matches[0].Length;
 for(int i = 0; i < rLen; ++i) {
     for(int j = 0; j < cLen; ++j) {
 
@@ -109,3 +126,7 @@ while (l < r) {
 # stack
 
 - monotonic stack
+
+# Queue
+
+- Priority Queue
