@@ -19,8 +19,15 @@
 - https://leetcode.com/problems/minimum-number-of-operations-to-make-array-xor-equal-to-k
 - https://leetcode.com/problems/number-of-wonderful-substrings/description
 
-# disjoint set
+# disjoint set union (union find)
 - https://leetcode.com/problems/find-if-path-exists-in-graph
+- https://leetcode.com/problems/most-stones-removed-with-same-row-or-column
 
 # binary search
 https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/solutions/769703/python-clear-explanation-powerful-ultimate-binary-search-template-solved-many-problems
+
+# linked list
+- https://leetcode.com/problems/linked-list-in-binary-tree (using KMP - string matching algorithm)
+
+# string matching
+- knuth morris pratt (KMP) - https://www.youtube.com/watch?v=GTJr8OvyEVQ
