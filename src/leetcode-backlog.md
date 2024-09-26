@@ -27,19 +27,37 @@
 # disjoint set union (union find)
 
 - https://leetcode.com/problems/find-if-path-exists-in-graph
+  - https://www.youtube.com/watch?v=aBxjDBC4M1U
 - https://leetcode.com/problems/most-stones-removed-with-same-row-or-column
+  - https://www.youtube.com/watch?v=OwMNX8SPavM
 
 # binary search
 
-https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/solutions/769703/python-clear-explanation-powerful-ultimate-binary-search-template-solved-many-problems
+- https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/solutions/769703/python-clear-explanation-powerful-ultimate-binary-search-template-solved-many-problems
 
 # linked list
 
+- https://leetcode.com/problems/split-linked-list-in-parts/ - complete my implementation
 - https://leetcode.com/problems/linked-list-in-binary-tree (using KMP - string matching algorithm)
 
 # string matching
 
 - knuth morris pratt (KMP) - https://www.youtube.com/watch?v=GTJr8OvyEVQ
+
+# matrix
+
+- https://leetcode.com/problems/spiral-matrix/
+
+# Trie
+
+- implement a basic trie (prefix tree)
+  - https://leetcode.com/problems/implement-trie-prefix-tree/description/
+  - my implementation - https://leetcode.com/problems/lexicographical-numbers/solutions/5834030/pure-trie-solution-prefix-tree-implementation-simple-explaination/
+- https://leetcode.com/problems/find-the-length-of-the-longest-common-prefix/description/?envType=daily-question&envId=2024-09-24
+
+# dynamic programming
+
+- https://leetcode.com/problems/different-ways-to-add-parentheses/
 
 # misc
 
