@@ -52,6 +52,7 @@
 
 - implement a basic trie (prefix tree)
   - https://leetcode.com/problems/implement-trie-prefix-tree/description/
+  - my implementation - https://leetcode.com/problems/lexicographical-numbers/solutions/5834030/pure-trie-solution-prefix-tree-implementation-simple-explaination/
 - https://leetcode.com/problems/find-the-length-of-the-longest-common-prefix/description/?envType=daily-question&envId=2024-09-24
 
 # dynamic programming
