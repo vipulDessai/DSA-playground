@@ -1,4 +1,4 @@
-function constructTree(
+export function constructTree(
   input: number[],
   segTree: number[],
   l: number,
@@ -30,8 +30,6 @@ for (let i = 0; i < 4 * 2 - 1; i++) {
 
 constructTree(input, segTree, 0, 3, 0);
 
-console.log(segTree);
-
 function rangeMinQuery(
   segTree: number[],
   qLow: number,
@@ -40,16 +38,18 @@ function rangeMinQuery(
   h: number,
   pos: number,
 ) {
+  // completely queries
   if (qLow <= l && qHigh >= h) {
     return segTree[pos];
   }
 
+  // does not overlap
   if (qLow > h || qHigh < l) {
     return Infinity;
   }
 
+  // overlaps
   const m = (l + h - (l + (h % 2))) / 2;
-
   return Math.min(
     rangeMinQuery(segTree, qLow, qHigh, l, m, 2 * pos + 1),
     rangeMinQuery(segTree, qLow, qHigh, m + 1, h, 2 * pos + 2),
