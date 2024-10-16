@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/longest-happy-string/description/
+
 import { MaxHeap } from './001-max-heap';
 
 function longestDiverseString(a: number, b: number, c: number): string {
