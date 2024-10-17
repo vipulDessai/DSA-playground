@@ -19,6 +19,11 @@
 - https://leetcode.com/problems/merge-k-sorted-lists/description/
 - https://leetcode.com/problems/merge-sorted-array/description/
 
+# array
+
+- https://leetcode.com/problems/rank-transform-of-an-array/description/
+- 001-design-a-stack-with-increment-operation.ts
+
 # bitwise manipulations
 
 - https://leetcode.com/problems/minimum-number-of-operations-to-make-array-xor-equal-to-k
