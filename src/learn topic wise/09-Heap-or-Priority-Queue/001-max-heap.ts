@@ -8,22 +8,23 @@
  * @function pop():number
  * @function get:size():number
  */
-export class MaxHeap {
-  sortedDsc: number[];
-  constructor() {
+export class MaxHeap<T> {
+  sortedDsc: T[];
+  getKey: Function;
+  constructor(_getKey: Function) {
+    this.getKey = _getKey;
     this.sortedDsc = [];
   }
-  push(n: number) {
-    this.sortedDsc = sortAndPushMax(this.sortedDsc, n);
-
-    function sortAndPushMax(arr: number[], target: number): number[] {
+  push(n: T) {
+    const sortAndPushMax = (arr: T[]): T[] => {
       let l = 0,
         r = arr.length - 1;
 
       while (l <= r) {
         const m = (l + r - ((l + r) % 2)) / 2;
-        if (n === arr[m]) return [...arr.slice(0, m), n, ...arr.slice(m)];
-        else if (n > arr[m]) {
+        if (n === this.getKey(m)) {
+          return [...arr.slice(0, m), n, ...arr.slice(m)];
+        } else if (n > this.getKey(m)) {
           r = m - 1;
         } else {
           l = m + 1;
@@ -31,7 +32,11 @@ export class MaxHeap {
       }
 
       return [...arr.slice(0, l), n, ...arr.slice(l)];
-    }
+    };
+
+    this.sortedDsc = sortAndPushMax(this.sortedDsc);
+
+    this.getKey(0);
   }
   get max() {
     return this.sortedDsc[0];
