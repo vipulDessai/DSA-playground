@@ -1,6 +1,5 @@
 // https://leetcode.com/problems/rank-transform-of-an-array/description/
 
-
 function arrayRankTransform(arr: number[]): number[] {
   let n = arr.length;
   const arrMap = Array.from(arr, (elem, i) => [elem, i]);
