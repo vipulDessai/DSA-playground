@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/split-a-string-into-the-max-number-of-unique-substrings
+// solution - https://leetcode.com/problems/split-a-string-into-the-max-number-of-unique-substrings/submissions/1429732386/
 function maxUniqueSplit(s: string): number {
   const set = new Set();
   function dfs(i: number) {
