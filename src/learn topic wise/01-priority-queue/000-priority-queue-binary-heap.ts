@@ -1,4 +1,4 @@
-class PriorityQueue {
+class PriorityQueue_Binary_Heap {
   heap: number[];
   constructor() {
     this.heap = [];
@@ -53,16 +53,21 @@ class PriorityQueue {
   insert(item: number) {
     this.heap.push(item);
     this._heapifyUp(this.heap.length - 1);
+
+    console.log(this.heap);
   }
 
   extractMin() {
     if (this.isEmpty()) {
       return null;
     }
+
     const minItem = this.heap[0];
     this.heap[0] = this.heap[this.heap.length - 1];
     this.heap.pop();
     this._heapifyDown(0);
+
+    console.log(this.heap);
     return minItem;
   }
 
@@ -75,7 +80,7 @@ class PriorityQueue {
   }
 }
 
-const pq = new PriorityQueue();
+const pq = new PriorityQueue_Binary_Heap();
 pq.insert(5);
 pq.insert(2);
 pq.insert(8);
