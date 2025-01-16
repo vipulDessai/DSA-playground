@@ -74,7 +74,7 @@ export class PriorityQueue_BST {
     }
 
     const min = current;
-    if (parentOfMin !== null) {
+    if (parentOfMin) {
       parentOfMin.left = min.right; // Replace min with its right subtree
     } else {
       this.root = min.right; // Special case: min was the root
