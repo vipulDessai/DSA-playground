@@ -229,6 +229,7 @@ class BinaryHeapPriorityQueue<T> {
 }
 
 // Example Usage (Max-Priority Queue):
+console.log('\n--- Max-Priority Queue Example ---');
 const maxPriorityQueue = new BinaryHeapPriorityQueue<string>();
 
 maxPriorityQueue.enqueue('Low Priority Task 1', 1);
@@ -246,20 +247,21 @@ while (!maxPriorityQueue.isEmpty()) {
   console.log(maxPriorityQueue.dequeue());
 }
 
-console.log('\n--- Min-Priority Queue Example ---');
-const minPriorityQueue = new BinaryHeapPriorityQueue<string>(true);
+// Example Usage (Min-Priority Queue):
+// console.log('\n--- Min-Priority Queue Example ---');
+// const minPriorityQueue = new BinaryHeapPriorityQueue<string>(true);
 
-minPriorityQueue.enqueue('Urgent', 1);
-minPriorityQueue.enqueue('Normal', 3);
-minPriorityQueue.enqueue('Low', 5);
-minPriorityQueue.enqueue('Medium', 4);
-minPriorityQueue.enqueue('High', 2);
+// minPriorityQueue.enqueue('Urgent', 1);
+// minPriorityQueue.enqueue('Normal', 3);
+// minPriorityQueue.enqueue('Low', 5);
+// minPriorityQueue.enqueue('Medium', 4);
+// minPriorityQueue.enqueue('High', 2);
 
-console.log('Min Priority Queue size:', minPriorityQueue.size());
-console.log('Min Priority Queue is empty:', minPriorityQueue.isEmpty());
-console.log('Min Priority Queue Peek:', minPriorityQueue.peek());
+// console.log('Min Priority Queue size:', minPriorityQueue.size());
+// console.log('Min Priority Queue is empty:', minPriorityQueue.isEmpty());
+// console.log('Min Priority Queue Peek:', minPriorityQueue.peek());
 
-console.log('Dequeueing from Min Priority Queue:');
-while (!minPriorityQueue.isEmpty()) {
-  console.log(minPriorityQueue.dequeue());
-}
+// console.log('Dequeueing from Min Priority Queue:');
+// while (!minPriorityQueue.isEmpty()) {
+//   console.log(minPriorityQueue.dequeue());
+// }
