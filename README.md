@@ -29,25 +29,25 @@ n is 16
 <img src="ref/dsa-list.png">
 
 # advanced DSA
-Kadane's Algorithm
-Sliding Window Fixed Size
-Sliding Window Variable Size
-Two Pointers
-Prefix Sums
-Fast and Slow Pointers
-Trie
-Union-Find
-Segment Tree
-Iterative DFS
-Two Heaps
-Subsets
-Combinations
-Permutations
-Dijkstra's
-Prim's
-Kruskal's
-Topological Sort
-0 / 1 Knapsack
-Unbounded Knapsack
-LCS
-Palindrome
+- Kadane's Algorithm
+- Sliding Window Fixed Size
+- Sliding Window Variable Size
+- Two Pointers
+- Prefix Sums
+- Fast and Slow Pointers
+- Trie
+- Union-Find
+- Segment Tree
+- Iterative DFS
+- Two Heaps
+- Subsets
+- Combinations
+- Permutations
+- Dijkstra's
+- Prim's
+- Kruskal's
+- Topological Sort
+- 0 / 1 Knapsack
+- Unbounded Knapsack
+- LCS
+- Palindrome
