@@ -128,7 +128,8 @@ class BinaryHeapPriorityQueue<T> {
    * Restores the heap property by moving a node down the tree.
    * @param index The index of the node to heapify down.
    */
-  private heapifyDown(index: number): void {
+  private heapifyDown(): void {
+    let index = 0;
     while (this.hasLeftChild(index)) {
       let childIndex = this.getLeftChildIndex(index);
       if (
@@ -179,7 +180,7 @@ class BinaryHeapPriorityQueue<T> {
 
     const root = this.heap[0];
     this.heap[0] = this.heap.pop()!;
-    this.heapifyDown(0);
+    this.heapifyDown();
     return root.value;
   }
 
