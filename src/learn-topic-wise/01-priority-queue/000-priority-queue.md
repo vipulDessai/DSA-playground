@@ -1,1 +1,7 @@
-1. https://leetcode.com/problems/k-closest-points-to-origin/
+- https://leetcode.com/problems/k-closest-points-to-origin/
+- https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/
+- https://leetcode.com/problems/kth-largest-element-in-an-array/
+- https://leetcode.com/problems/top-k-frequent-elements/ - Important
+- https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/
+- https://leetcode.com/problems/find-subsequence-of-length-k-with-the-largest-sum/
+- https://leetcode.com/problems/rearrange-string-k-distance-apart/

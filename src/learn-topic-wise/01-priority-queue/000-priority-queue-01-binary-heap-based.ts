@@ -1,3 +1,12 @@
+/**
+ * Enqueue (Insertion): O(log n)
+ * Adding a new element at the end of the heap and then sifting it up to its correct position takes logarithmic time with respect to the number of elements (n) in the heap.
+ * Dequeue (Extract-Min or Extract-Max): O(log n)
+ * Removing the root element (the one with the highest or lowest priority) and then sifting down the last element to maintain the heap property takes logarithmic time.
+ * Peek (Get-Min or Get-Max): O(1)
+ * The element with the highest or lowest priority is always at the root of the heap, so accessing it takes constant time.
+ */
+
 interface PriorityQueueItem<T> {
   value: T;
   priority: number;
