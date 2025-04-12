@@ -3,7 +3,17 @@ interface PriorityQueueItem<T> {
   priority: number;
 }
 
-class BSTPriorityQueue<T> {
+class TreeNode<T> {
+  data: T;
+  left: TreeNode<T> | null = null;
+  right: TreeNode<T> | null = null;
+
+  constructor(data: T) {
+    this.data = data;
+  }
+}
+
+export class BSTPriorityQueue<T> {
   private root: TreeNode<PriorityQueueItem<T>> | null = null;
   private sizeValue: number = 0;
   private isMinPriority: boolean;
@@ -53,14 +63,14 @@ class BSTPriorityQueue<T> {
 
     if (compareResult < 0) {
       // newNode has higher priority (for max-priority) or lower priority (for min-priority)
-      if (node.left === null) {
+      if (!node.left) {
         node.left = newNode;
       } else {
         this.insertNode(node.left, newNode);
       }
     } else {
       // newNode has lower or equal priority (for max-priority) or higher or equal priority (for min-priority)
-      if (node.right === null) {
+      if (!node.right) {
         node.right = newNode;
       } else {
         this.insertNode(node.right, newNode);
@@ -105,15 +115,12 @@ class BSTPriorityQueue<T> {
 
     if (minMaxNodeParent) {
       if (this.isMinPriority) {
-        minMaxNodeParent.left = this.removeNode(minMaxNode, minMaxNode.right);
+        minMaxNodeParent.left = this.removeNode(minMaxNode);
       } else {
-        minMaxNodeParent.right = this.removeNode(minMaxNode, minMaxNode.left);
+        minMaxNodeParent.right = this.removeNode(minMaxNode);
       }
     } else {
-      this.root = this.removeNode(
-        this.root,
-        this.isMinPriority ? this.root.right : this.root.left,
-      );
+      this.root = this.removeNode(this.root);
     }
 
     this.sizeValue--;
@@ -122,7 +129,6 @@ class BSTPriorityQueue<T> {
 
   private removeNode(
     nodeToRemove: TreeNode<PriorityQueueItem<T>>,
-    replacementNode: TreeNode<PriorityQueueItem<T>> | null,
   ): TreeNode<PriorityQueueItem<T>> | null {
     if (!nodeToRemove.left && !nodeToRemove.right) {
       return null;
@@ -181,39 +187,36 @@ class BSTPriorityQueue<T> {
   }
 }
 
-class TreeNode<T> {
-  data: T;
-  left: TreeNode<T> | null = null;
-  right: TreeNode<T> | null = null;
-
-  constructor(data: T) {
-    this.data = data;
-  }
-}
-
-// Example Usage (Max-Priority):
+// Example Usage (Max-Priority Queue):
+console.log('\n--- BST Max-Priority Queue Example ---');
 const bstMaxPQ = new BSTPriorityQueue<string>();
-bstMaxPQ.enqueue('Low', 1);
-bstMaxPQ.enqueue('High', 3);
-bstMaxPQ.enqueue('Medium', 2);
-bstMaxPQ.enqueue('Another High', 3);
+bstMaxPQ.enqueue('Low Priority Task 1', 1);
+bstMaxPQ.enqueue('Medium Priority Task 1', 2);
+bstMaxPQ.enqueue('High Priority Task 1', 3);
+bstMaxPQ.enqueue('Medium Priority Task 1', 2);
+bstMaxPQ.enqueue('High Priority Task 2', 3);
+bstMaxPQ.enqueue('Low Priority Task 2', 1);
 
 console.log('BST Max PQ Size:', bstMaxPQ.size);
+console.log('BST Max PQ is empty:', bstMaxPQ.isEmpty());
 console.log('BST Max PQ Peek:', bstMaxPQ.peek());
+
+console.log('Dequeueing BST Max-Priority Queue:');
 while (!bstMaxPQ.isEmpty()) {
-  console.log('BST Max PQ Dequeue:', bstMaxPQ.dequeue());
+  console.log(bstMaxPQ.dequeue());
 }
 
-console.log('\n--- BST Min-Priority Example ---');
-const bstMinPQ = new BSTPriorityQueue<string>(true);
-bstMinPQ.enqueue('Urgent', 1);
-bstMinPQ.enqueue('Normal', 3);
-bstMinPQ.enqueue('Low', 5);
-bstMinPQ.enqueue('Medium', 4);
-bstMinPQ.enqueue('High', 2);
+// Example Usage (Min-Priority Queue):
+// console.log('\n--- BST Min-Priority Queue Example ---');
+// const bstMinPQ = new BSTPriorityQueue<string>(true);
+// bstMinPQ.enqueue('Urgent', 1);
+// bstMinPQ.enqueue('Normal', 3);
+// bstMinPQ.enqueue('Low', 5);
+// bstMinPQ.enqueue('Medium', 4);
+// bstMinPQ.enqueue('High', 2);
 
-console.log('BST Min PQ Size:', bstMinPQ.size);
-console.log('BST Min PQ Peek:', bstMinPQ.peek());
-while (!bstMinPQ.isEmpty()) {
-  console.log('BST Min PQ Dequeue:', bstMinPQ.dequeue());
-}
+// console.log('BST Min PQ Size:', bstMinPQ.size);
+// console.log('BST Min PQ Peek:', bstMinPQ.peek());
+// while (!bstMinPQ.isEmpty()) {
+//   console.log('BST Min PQ Dequeue:', bstMinPQ.dequeue());
+// }

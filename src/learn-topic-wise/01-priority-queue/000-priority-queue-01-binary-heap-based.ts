@@ -12,7 +12,7 @@ interface PriorityQueueItem<T> {
   priority: number;
 }
 
-class BinaryHeapPriorityQueue<T> {
+export class BinaryHeapPriorityQueue<T> {
   private heap: PriorityQueueItem<T>[] = [];
   private isMinHeap: boolean;
 
