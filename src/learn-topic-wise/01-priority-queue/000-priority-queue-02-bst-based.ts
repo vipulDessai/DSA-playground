@@ -1,12 +1,22 @@
+// | Operation  | Best Case | Worst Case  |
+// |------------|-----------|-------------|
+// | enqueue    | O(log n)  | O(n)        |
+// | dequeue    | O(log n)  | O(n)        |
+// | peek       | O(log n)  | O(n)        |
+// | isEmpty    | O(1)      | O(1)        |
+// | clear      | O(1)      | O(1)        |
+// | size       | O(1)      | O(1)        |
+// | toArray    | O(n)      | O(n)        |
+
 interface PriorityQueueItem<T> {
   value: T;
   priority: number;
 }
 
-class TreeNode<T> {
+class PqTreeNode<T> {
   data: T;
-  left: TreeNode<T> | null = null;
-  right: TreeNode<T> | null = null;
+  left: PqTreeNode<T> | null = null;
+  right: PqTreeNode<T> | null = null;
 
   constructor(data: T) {
     this.data = data;
@@ -14,7 +24,7 @@ class TreeNode<T> {
 }
 
 export class BSTPriorityQueue<T> {
-  private root: TreeNode<PriorityQueueItem<T>> | null = null;
+  private root: PqTreeNode<PriorityQueueItem<T>> | null = null;
   private sizeValue: number = 0;
   private isMinPriority: boolean;
 
@@ -42,7 +52,7 @@ export class BSTPriorityQueue<T> {
    */
   enqueue(value: T, priority: number): void {
     const newItem: PriorityQueueItem<T> = { value, priority };
-    const newNode = new TreeNode(newItem);
+    const newNode = new PqTreeNode(newItem);
 
     if (!this.root) {
       this.root = newNode;
@@ -53,12 +63,12 @@ export class BSTPriorityQueue<T> {
   }
 
   private insertNode(
-    node: TreeNode<PriorityQueueItem<T>>,
-    newNode: TreeNode<PriorityQueueItem<T>>,
+    node: PqTreeNode<PriorityQueueItem<T>>,
+    newNode: PqTreeNode<PriorityQueueItem<T>>,
   ): void {
     const compareResult = this.comparePriority(
-      newNode.data.priority,
       node.data.priority,
+      newNode.data.priority,
     );
 
     if (compareResult < 0) {
@@ -103,21 +113,21 @@ export class BSTPriorityQueue<T> {
       return undefined;
     }
 
-    let minMaxNodeParent: TreeNode<PriorityQueueItem<T>> | null = null;
-    let minMaxNode: TreeNode<PriorityQueueItem<T>> = this.root;
+    let minMaxNodeParent: PqTreeNode<PriorityQueueItem<T>> | null = null;
+    let minMaxNode: PqTreeNode<PriorityQueueItem<T>> = this.root;
 
-    while (this.isMinPriority ? minMaxNode.left : minMaxNode.right) {
+    while (this.isMinPriority ? minMaxNode.right : minMaxNode.left) {
       minMaxNodeParent = minMaxNode;
-      minMaxNode = this.isMinPriority ? minMaxNode.left! : minMaxNode.right!;
+      minMaxNode = this.isMinPriority ? minMaxNode.right! : minMaxNode.left!;
     }
 
     const dequeuedValue = minMaxNode.data.value;
 
     if (minMaxNodeParent) {
       if (this.isMinPriority) {
-        minMaxNodeParent.left = this.removeNode(minMaxNode);
-      } else {
         minMaxNodeParent.right = this.removeNode(minMaxNode);
+      } else {
+        minMaxNodeParent.left = this.removeNode(minMaxNode);
       }
     } else {
       this.root = this.removeNode(this.root);
@@ -128,45 +138,21 @@ export class BSTPriorityQueue<T> {
   }
 
   private removeNode(
-    nodeToRemove: TreeNode<PriorityQueueItem<T>>,
-  ): TreeNode<PriorityQueueItem<T>> | null {
-    if (!nodeToRemove.left && !nodeToRemove.right) {
-      return null;
-    } else if (!nodeToRemove.left) {
-      return nodeToRemove.right;
-    } else if (!nodeToRemove.right) {
+    nodeToRemove: PqTreeNode<PriorityQueueItem<T>>,
+  ): PqTreeNode<PriorityQueueItem<T>> | null {
+    if (nodeToRemove.left) {
       return nodeToRemove.left;
-    } else {
-      // Node has two children, find the in-order successor (for min) or predecessor (for max)
-      let temp = this.isMinPriority ? nodeToRemove.right : nodeToRemove.left;
-      let tempParent = nodeToRemove;
-      while (this.isMinPriority ? temp.left : temp.right) {
-        tempParent = temp;
-        temp = this.isMinPriority ? temp.left! : temp.right!;
-      }
-
-      nodeToRemove.data = temp.data;
-
-      if (tempParent) {
-        if (this.isMinPriority) {
-          tempParent.left = temp.right;
-        } else {
-          tempParent.right = temp.left;
-        }
-      } else {
-        // The successor/predecessor was the direct child
-        if (this.isMinPriority) {
-          nodeToRemove.right = temp.right;
-        } else {
-          nodeToRemove.left = temp.left;
-        }
-      }
-      return nodeToRemove;
     }
+
+    if (nodeToRemove.right) {
+      return nodeToRemove.right;
+    }
+
+    return null;
   }
 
   private comparePriority(priorityA: number, priorityB: number): number {
-    return this.isMinPriority ? priorityA - priorityB : priorityB - priorityA;
+    return priorityA - priorityB;
   }
 
   toArray(): PriorityQueueItem<T>[] {
@@ -176,7 +162,7 @@ export class BSTPriorityQueue<T> {
   }
 
   private inOrderTraversal(
-    node: TreeNode<PriorityQueueItem<T>> | null,
+    node: PqTreeNode<PriorityQueueItem<T>> | null,
     result: PriorityQueueItem<T>[],
   ): void {
     if (node) {
@@ -189,7 +175,7 @@ export class BSTPriorityQueue<T> {
 
 // Example Usage (Max-Priority Queue):
 console.log('\n--- BST Max-Priority Queue Example ---');
-const bstMaxPQ = new BSTPriorityQueue<string>();
+const bstMaxPQ = new BSTPriorityQueue<string>(false);
 bstMaxPQ.enqueue('Low Priority Task 1', 1);
 bstMaxPQ.enqueue('Medium Priority Task 1', 2);
 bstMaxPQ.enqueue('High Priority Task 1', 3);
