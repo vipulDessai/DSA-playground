@@ -9,7 +9,7 @@ How to identify :
 1. The elements are getting updated and you need to keep track of the Min/Max ele all the time.
 2. Asked for kth largest / smallest element. (QuickSelect is also a option, Sort and return arr[k-1] also)
 
-## Type 1 - Kth min/maz
+## Type 1 - Kth min/max
 
 if you have to find kth largest/ k most frequent use Min Heap, and when you need kth smallest/ k list occuring use Max Heap
 
@@ -25,14 +25,14 @@ if you have to find kth largest/ k most frequent use Min Heap, and when you need
 
 ```c#
 int function_kth(vector<int>& nums, int k) {
-        priority_queue <int, vector<int>, greater<int>> pq;   // Declare min/max heap.
-        for (auto i : nums) {   // one by one
-            pq.push(i);      // push all ele in the heap
-            if(pq.size() > k)   // if size gets more than k pop ele.
-                pq.pop();
-        }
-        return pq.top();    // return the top ele/ all elements
+    priority_queue <int, vector<int>, greater<int>> pq;   // Declare min/max heap.
+    for (auto i : nums) {   // one by one
+        pq.push(i);      // push all ele in the heap
+        if(pq.size() > k)   // if size gets more than k pop ele.
+            pq.pop();
     }
+    return pq.top();    // return the top ele/ all elements
+}
 ```
 
 ## Type 2 : Take 2 elements from Heap Perform some operation and put again in the heap
@@ -114,7 +114,7 @@ when to use :
     }
 ```
 
-## Type 2 : varation of Normal Binary Search
+## Type 2 : variation of Normal Binary Search
 
 - https://leetcode.com/problems/search-insert-position/
 - https://leetcode.com/problems/search-in-rotated-sorted-array/
@@ -141,7 +141,7 @@ when to use :
 - https://leetcode.com/problems/kth-missing-positive-number/
 - https://leetcode.com/problems/range-sum-of-sorted-subarray-sums/ - prefix sum
 
-# sliding wd
+# Sliding window
 
 ## Fixed length sliding wd
 
@@ -161,7 +161,7 @@ when to use :
 - https://leetcode.com/problems/k-radius-subarray-averages/
 - https://leetcode.com/problems/number-of-unique-flavors-after-sharing-k-candies/
 
-## varable length sliding wd
+## variable length sliding wd
 
 - https://leetcode.com/problems/longest-substring-without-repeating-characters/
 - https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/
@@ -212,7 +212,7 @@ when to use :
 - https://leetcode.com/problems/subarray-sum-equals-k/
 - https://leetcode.com/problems/subarray-sums-divisible-by-k/
 
-## others
+## Others
 
 - https://leetcode.com/problems/product-of-array-except-self/
 

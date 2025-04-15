@@ -1,7 +1,7 @@
 import {
   LinkedList,
   ListNode,
-} from '../06-Linked-List/000-linked-list-from-array';
+} from '../06-linked-List/000-linked-list-from-array';
 import { BinaryTree, TreeNode } from './000-binary-tree-from-array';
 
 const newTree = new BinaryTree([2, null, 2, null, 2, null, 1]);
