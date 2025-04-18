@@ -84,7 +84,6 @@ when to use :
 - https://leetcode.com/problems/sqrtx/
 - https://leetcode.com/problems/split-array-largest-sum/ - IMP
 - https://leetcode.com/problems/first-bad-version/
-- https://leetcode.com/problems/split-array-largest-sum/ - IMP
 - https://leetcode.com/problems/koko-eating-bananas/
 - https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
 - https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/
