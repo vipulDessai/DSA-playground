@@ -71,15 +71,15 @@ export class BSTPriorityQueue<T> {
       newNode.data.priority,
     );
 
+    // if value is negative that means the current node is greater
+    // so add it to the left
     if (compareResult < 0) {
-      // newNode has higher priority (for max-priority) or lower priority (for min-priority)
       if (!node.left) {
         node.left = newNode;
       } else {
         this.insertNode(node.left, newNode);
       }
     } else {
-      // newNode has lower or equal priority (for max-priority) or higher or equal priority (for min-priority)
       if (!node.right) {
         node.right = newNode;
       } else {
@@ -116,6 +116,8 @@ export class BSTPriorityQueue<T> {
     let minMaxNodeParent: PqTreeNode<PriorityQueueItem<T>> | null = null;
     let minMaxNode: PqTreeNode<PriorityQueueItem<T>> = this.root;
 
+    // for min-priority traverse to the right most node
+    // for max-priority traverse to the left most node
     while (this.isMinPriority ? minMaxNode.right : minMaxNode.left) {
       minMaxNodeParent = minMaxNode;
       minMaxNode = this.isMinPriority ? minMaxNode.right! : minMaxNode.left!;
