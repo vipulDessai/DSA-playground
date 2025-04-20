@@ -39,3 +39,17 @@ const m = 3;    // we need to place 3 people in positions
 // find the max gap so that we wont out run position 100, i.e. no person will stand after 100
 const maxGap = Math.ceil(maxPositions / m - 1); // any number higher than maxGap will outrun number 100
 ```
+
+# distribute all items equally in all bags with number of operations
+
+```ts
+const nums = [2, 4, 8, 2];
+const n = nums.length;
+
+const maxOperations = 2;
+
+let sum = nums.reduce((acc, cur) => acc + cur, 0);
+
+// divide the items so that every bag same number of balls
+const result = sum / (n + maxOperations);
+```

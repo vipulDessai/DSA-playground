@@ -57,3 +57,5 @@ function maxDistance_binarySearch(position: number[], m: number): number {
 
 // console.log(maxDistance_binarySearch([1, 2, 3, 4, 5, 100], 3));
 console.log(maxDistance_binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 5));
+
+export const moduleHack = '';
