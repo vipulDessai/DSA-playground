@@ -2,7 +2,7 @@ function feasible(nums: number[], maxOperations: number, curMaxBalls: number) {
   let total = 0;
 
   for (const num of nums) {
-    total += Math.ceil(num / curMaxBalls) - 1;
+total += Math.ceil(num / curMaxBalls) - 1;
 
     if (total > maxOperations) {
       return false;
