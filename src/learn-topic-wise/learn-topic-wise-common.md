@@ -1,6 +1,10 @@
 # Reference
 
 - https://leetcode.com/discuss/study-guide/2428868/Array-Problems-classified-into-different-types
+- https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/
+
+# hash
+- https://leetcode.com/problems/two-sum
 
 # Heap
 
