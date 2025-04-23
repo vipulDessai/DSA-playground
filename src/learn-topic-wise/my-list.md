@@ -48,7 +48,6 @@
 
 ## medium
 
-- [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
 - [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
 - [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 - [4Sum II](https://leetcode.com/problems/4sum-ii/)
@@ -97,3 +96,9 @@
 
 - [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
 - [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
+
+# Two pointers
+
+## easy
+
+- [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
