@@ -65,15 +65,15 @@
 - [Design Underground System](https://leetcode.com/problems/design-underground-system/)
 - [Verifying an Alien Dictionary](https://leetcode.com/problems/verifying-an-alien-dictionary/)
 - [Find Duplicate Subtrees](https://leetcode.com/problems/find-duplicate-subtrees/)
+- [LRU Cache](https://leetcode.com/problems/lru-cache/)
+- [Insert Delete GetRandom O(1) - Duplicates allowed](https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/)
 
 ## hard
 
 - [First Missing Positive](https://leetcode.com/problems/first-missing-positive)
-- [Insert Delete GetRandom O(1) - Duplicates allowed](https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/)
 - [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
 - [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
 - [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
-- [LRU Cache](https://leetcode.com/problems/lru-cache/)
 - [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)
 - [Contiguous Array](https://leetcode.com/problems/contiguous-array/)
 - [Word Ladder II](https://leetcode.com/problems/word-ladder-ii/)
