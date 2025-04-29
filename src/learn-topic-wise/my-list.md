@@ -71,7 +71,7 @@
 
 ## hard
 
-- [First Missing Positive](https://leetcode.com/problems/first-missing-positive)
+- [First Missing Positive](https://leetcode.com/problems/first-missing-positive) - also cyclic sort - [refer below](./my-list.md#hard-1)
 - [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
 - [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
 - [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)
@@ -102,3 +102,11 @@
 ## easy
 
 - [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
+
+# Sort
+
+## cyclic sort
+
+### hard
+
+- [First Missing Positive](https://leetcode.com/problems/first-missing-positive) - can be solved using hash as well - [refer above](./my-list.md#hard)
