@@ -20,6 +20,11 @@ n is 16
 16 -> 8 -> 4 -> 2 -> 1
 ```
 
+# Space Complexity:
+
+## Auxiliary O(N)
+The optimized approaches in this article use in-place solutions. Does in-place mean a constant space complexity? By definition, an in-place algorithm transforms the input using no auxiliary data structures proportional to the input size. An in-place algorithm does not necessarily mean constant space complexity; for example, an in-place recursive algorithm uses the recursion stack, so the space is not constant.
+
 # random list
 
 ## string manipulation

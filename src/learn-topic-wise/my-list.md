@@ -48,6 +48,7 @@
 
 ## medium
 
+- [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
 - [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
 - [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 - [4Sum II](https://leetcode.com/problems/4sum-ii/)
@@ -72,7 +73,6 @@
 
 - [First Missing Positive](https://leetcode.com/problems/first-missing-positive)
 - [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
-- [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
 - [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
 - [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)
 - [Contiguous Array](https://leetcode.com/problems/contiguous-array/)
