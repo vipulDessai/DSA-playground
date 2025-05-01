@@ -1,7 +1,7 @@
-import { MaxHeap } from './001-max-heap';
+import { MaxHeap_FullSortWithBinarySearch } from './001-max-heap';
 
 function lastStoneWeight(stones: number[]): number {
-  const mHeap = new MaxHeap();
+  const mHeap = new MaxHeap_FullSortWithBinarySearch();
 
   for (let i = 0; i < stones.length; i++) {
     mHeap.push(stones[i]);

@@ -1,11 +1,13 @@
 // https://leetcode.com/problems/longest-happy-string/description/
 
-import { MaxHeap } from './001-max-heap';
+import { MaxHeap_FullSortWithBinarySearch } from './001-max-heap';
 
 function longestDiverseString(a: number, b: number, c: number): string {
-  const mH = new MaxHeap<{ [key: string]: number }>((index: number) => {
-    return mH.sortedDsc[index];
-  });
+  const mH = new MaxHeap_FullSortWithBinarySearch<{ [key: string]: number }>(
+    (index: number) => {
+      return mH.sortedDsc[index];
+    },
+  );
   mH.push({ c });
   mH.push({ a });
   mH.push({ b });

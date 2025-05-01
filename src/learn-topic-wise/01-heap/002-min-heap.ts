@@ -1,4 +1,4 @@
-class MinHeap_O_N {
+class MinHeap_linear {
   arr: number[];
   constructor() {
     this.arr = [];
@@ -15,7 +15,7 @@ class MinHeap_O_N {
   }
 }
 
-const mH_o_n = new MinHeap_O_N();
+const mH_o_n = new MinHeap_linear();
 mH_o_n.push(1);
 mH_o_n.push(9);
 mH_o_n.push(16);
@@ -25,5 +25,3 @@ mH_o_n.push(6);
 mH_o_n.push(18);
 
 console.log(mH_o_n.arr);
-
-class MinHeap_Log_N {}
