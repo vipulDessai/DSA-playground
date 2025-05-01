@@ -1,5 +1,3 @@
-// TODO: fix the binary search insert location
-
 /**
  * @description the searching and insert in the max heap will be done in O(log n)
  * and every insert will be repeated n number of times (i.e. for n size of array)
@@ -22,7 +20,7 @@ export class MaxHeap_FullSortWithBinarySearch<T> {
     let arr = this.sortedDsc;
 
     let l = 0,
-      r = arr.length - 1;
+      r = arr.length;
 
     while (l < r) {
       const m = Math.floor(l + (r - l) / 2);
@@ -45,7 +43,7 @@ export class MaxHeap_FullSortWithBinarySearch<T> {
   }
 
   pop() {
-    return this.sortedDsc.shift();
+    return this.sortedDsc.pop();
   }
 
   get size() {
