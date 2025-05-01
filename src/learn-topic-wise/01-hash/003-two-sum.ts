@@ -15,3 +15,5 @@ function twoSum(list: number[], target: number): number[] | false {
 }
 
 console.log(twoSum([2, 1, 5, 3], 4));
+
+export const moduleThisFile = 'okay';
