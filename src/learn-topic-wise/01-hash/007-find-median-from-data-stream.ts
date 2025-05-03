@@ -2,50 +2,36 @@
 
 // brute force
 class MedianFinder_brute {
-  private maxHeap: number[]; // Max Heap (stores smaller half of numbers)
-  private minHeap: number[]; // Min Heap (stores larger half of numbers)
+  private heap: number[]; // Max Heap (stores smaller half of numbers)
 
   constructor() {
-    this.maxHeap = [];
-    this.minHeap = [];
+    this.heap = [];
   }
 
   addNum(num: number): void {
-    if (this.maxHeap.length === 0 || num <= this.maxHeap[0]) {
-      this.maxHeap.push(num);
-      this.maxHeap.sort((a, b) => b - a); // Maintain heap property
-    } else {
-      this.minHeap.push(num);
-      this.minHeap.sort((a, b) => a - b);
-    }
-
-    // Balance heaps
-    if (this.maxHeap.length > this.minHeap.length + 1) {
-      this.minHeap.push(this.maxHeap.shift()!);
-      this.minHeap.sort((a, b) => a - b);
-    } else if (this.minHeap.length > this.maxHeap.length) {
-      this.maxHeap.push(this.minHeap.shift()!);
-      this.maxHeap.sort((a, b) => b - a);
-    }
+    this.heap.push(num);
+    this.heap.sort((a, b) => a - b);
   }
 
   findMedian(): number {
-    if (this.maxHeap.length === this.minHeap.length) {
-      return (this.maxHeap[0] + this.minHeap[0]) / 2.0;
+    const n = this.heap.length;
+    if (n % 2 === 0) {
+      const m = n / 2;
+      return (this.heap[m] + this.heap[m - 1]) / 2.0;
+    } else {
+      return this.heap[(n - 1) / 2];
     }
-
-    return this.maxHeap[0]; // Max Heap stores the median when odd count
   }
 }
 
-var mf_brute = new MedianFinder_brute();
-mf_brute.addNum(6);
-mf_brute.addNum(10);
-console.log(mf_brute.findMedian()); // Output: 8.0
-mf_brute.addNum(2);
-console.log(mf_brute.findMedian()); // Output: 6
-mf_brute.addNum(3);
-console.log(mf_brute.findMedian()); // Output: 4.5
+// var mf_brute = new MedianFinder_brute();
+// mf_brute.addNum(6);
+// mf_brute.addNum(10);
+// console.log(mf_brute.findMedian()); // Output: 8.0
+// mf_brute.addNum(2);
+// console.log(mf_brute.findMedian()); // Output: 6
+// mf_brute.addNum(3);
+// console.log(mf_brute.findMedian()); // Output: 4.5
 
 // optimal solution using two heaps
 export class Heap {
@@ -162,7 +148,13 @@ class MedianFinder_Heap {
     // Balance heaps by sizes (equalizing the heap size)
     if (this.maxHeap.length > this.minHeap.length + 1) {
       this.minHeap.add(this.maxHeap.dequeue()!);
-    } else if (this.minHeap.length > this.maxHeap.length) {
+    }
+    // why NOT this.minHeap.length > this.maxHeap.length + 1
+    // maxHeap directly stores the median when count is odd
+    // beside say we have
+    // max 1 and min - 2,3 then 2 can be shifted to max as for odd length
+    // we return maxHeap.peek
+    else if (this.minHeap.length > this.maxHeap.length) {
       this.maxHeap.add(this.minHeap.dequeue()!);
     }
   }
@@ -176,11 +168,11 @@ class MedianFinder_Heap {
   }
 }
 
-// var mf_heap = new MedianFinder_Heap();
-// mf_heap.addNum(6);
-// mf_heap.addNum(10);
-// console.log(mf_heap.findMedian()); // Output: 8.0
-// mf_heap.addNum(2);
-// console.log(mf_heap.findMedian()); // Output: 6
-// mf_heap.addNum(3);
-// console.log(mf_heap.findMedian()); // Output: 4.5
+var mf_heap = new MedianFinder_Heap();
+mf_heap.addNum(6);
+mf_heap.addNum(10);
+console.log(mf_heap.findMedian()); // Output: 8.0
+mf_heap.addNum(2);
+console.log(mf_heap.findMedian()); // Output: 6
+mf_heap.addNum(3);
+console.log(mf_heap.findMedian()); // Output: 4.5
