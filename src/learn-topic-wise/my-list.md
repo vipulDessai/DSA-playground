@@ -21,6 +21,10 @@
 - [Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones/)
 - [Find Pivot Index](https://leetcode.com/problems/find-pivot-index/)
 
+# subarray whose sum is k
+
+- [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)
+
 # Hash
 
 ## easy
@@ -51,7 +55,7 @@
 - [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
 - [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
 - [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
-- [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)
+- [Contiguous Array](https://leetcode.com/problems/contiguous-array/)
 - [4Sum II](https://leetcode.com/problems/4sum-ii/)
 - [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)
 - [Design Twitter](https://leetcode.com/problems/design-twitter/)
@@ -70,13 +74,11 @@
 - [LRU Cache](https://leetcode.com/problems/lru-cache/)
 - [Insert Delete GetRandom O(1) - Duplicates allowed](https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/)
 
-
 ## hard
 
 - [First Missing Positive](https://leetcode.com/problems/first-missing-positive) - also cyclic sort - [refer below](./my-list.md#hard-1)
 - [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
 - [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
-- [Contiguous Array](https://leetcode.com/problems/contiguous-array/)
 - [Word Ladder II](https://leetcode.com/problems/word-ladder-ii/)
 - [Smallest Sufficient Team](https://leetcode.com/problems/smallest-sufficient-team/)
 - [Reconstruct Itinerary](https://leetcode.com/problems/reconstruct-itinerary/)
