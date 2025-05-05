@@ -117,3 +117,9 @@
 ### hard
 
 - [First Missing Positive](https://leetcode.com/problems/first-missing-positive) - can be solved using hash as well - [refer above](./my-list.md#hard)
+
+# Sliding window
+
+## medium
+
+- [Arithmetic Slices](https://leetcode.com/problems/arithmetic-slices/description/)

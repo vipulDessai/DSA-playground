@@ -10,6 +10,7 @@ function maxSubArray(nums: number[]): number {
       maxSum = curSum;
     }
 
+    // handle case to find smallest -ve value
     if (curSum < 0) {
       curSum = 0;
     }
@@ -17,3 +18,5 @@ function maxSubArray(nums: number[]): number {
 
   return maxSum;
 }
+
+console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));

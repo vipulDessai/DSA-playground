@@ -3,18 +3,15 @@ function largestSubArray(nums: number[]): number {
   let prefixSum = 0;
 
   const sumMap = new Map();
+  sumMap.set(0, -1);
 
   for (let i = 0; i < nums.length; i++) {
     prefixSum += nums[i];
 
-    if (prefixSum === 0) {
-      max = i + 1;
+    if (sumMap.has(prefixSum)) {
+      max = Math.max(max, i - sumMap.get(prefixSum));
     } else {
-      if (sumMap.has(prefixSum)) {
-        max = Math.max(max, i - sumMap.get(prefixSum));
-      } else {
-        sumMap.set(prefixSum, i);
-      }
+      sumMap.set(prefixSum, i);
     }
   }
 
