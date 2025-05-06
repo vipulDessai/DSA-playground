@@ -79,7 +79,7 @@
 - [First Missing Positive](https://leetcode.com/problems/first-missing-positive) - also cyclic sort - [refer below](./my-list.md#hard-1)
 - [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
 - [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
-- [Word Ladder II](https://leetcode.com/problems/word-ladder-ii/)
+- [Word Ladder I](https://leetcode.com/problems/word-ladder/) and [Word Ladder II](https://leetcode.com/problems/word-ladder-ii/)
 - [Smallest Sufficient Team](https://leetcode.com/problems/smallest-sufficient-team/)
 - [Reconstruct Itinerary](https://leetcode.com/problems/reconstruct-itinerary/)
 - [Shortest Path to Get All Keys](https://leetcode.com/problems/shortest-path-to-get-all-keys/)
