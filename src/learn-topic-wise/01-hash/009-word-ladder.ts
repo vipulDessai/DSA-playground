@@ -1,17 +1,18 @@
-function preprocessWordList(wordList: string[]): Record<string, string[]> {
-  const patternDict: Record<string, string[]> = {};
-
+function processWords(wordList: string[]) {
+  const map = new Map<string, string[]>();
   for (const word of wordList) {
-    for (let i = 0; i < word.length; i++) {
+    for (let i = 0; i < word.length; ++i) {
       const pattern = word.substring(0, i) + '*' + word.substring(i + 1);
-      if (!patternDict[pattern]) {
-        patternDict[pattern] = [];
+
+      if (!map.has(pattern)) {
+        map.set(pattern, []);
       }
-      patternDict[pattern].push(word);
+
+      map.get(pattern)!.push(word);
     }
   }
 
-  return patternDict;
+  return map;
 }
 
 function ladderLength(
@@ -19,7 +20,42 @@ function ladderLength(
   endWord: string,
   wordList: string[],
 ): number {
-  const preprocessedDict = preprocessWordList(wordList);
+  const map = processWords(wordList);
+
+  const q = [beginWord],
+    visited = new Set<string>();
+  let res = 1;
+
+  visited.add(beginWord);
+
+  while (q.length > 0) {
+    const qLen = q.length;
+
+    for (let i = 0; i < qLen; ++i) {
+      const word = q.shift()!;
+
+      for (let j = 0; j < word.length; ++j) {
+        const pattern = word.substring(0, j) + '*' + word.substring(j + 1);
+
+        const pList = map.get(pattern) || [];
+
+        for (let k = 0; k < pList.length; ++k) {
+          const childWord = pList[k];
+
+          if (childWord === endWord) {
+            return ++res;
+          }
+
+          if (!visited.has(childWord)) {
+            q.push(childWord);
+            visited.add(childWord);
+          }
+        }
+      }
+    }
+
+    ++res;
+  }
 
   return 0;
 }
