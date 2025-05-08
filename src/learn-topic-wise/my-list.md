@@ -80,7 +80,6 @@
 - [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
 - [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
 - [Word Ladder I](https://leetcode.com/problems/word-ladder/) and [Word Ladder II](https://leetcode.com/problems/word-ladder-ii/)
-- [Smallest Sufficient Team](https://leetcode.com/problems/smallest-sufficient-team/)
 - [Reconstruct Itinerary](https://leetcode.com/problems/reconstruct-itinerary/)
 - [Shortest Path to Get All Keys](https://leetcode.com/problems/shortest-path-to-get-all-keys/)
 - [Alien Dictionary](https://leetcode.com/problems/alien-dictionary/)
@@ -123,3 +122,9 @@
 ## medium
 
 - [Arithmetic Slices](https://leetcode.com/problems/arithmetic-slices/description/)
+
+# Bitwise
+
+## hard
+
+- [Smallest Sufficient Team](https://leetcode.com/problems/smallest-sufficient-team/)
