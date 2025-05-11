@@ -98,6 +98,7 @@
 
 - [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
 - [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
+- [Dijktra Algorithm](https://www.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1)
 
 # Two pointers
 
