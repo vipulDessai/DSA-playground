@@ -1,4 +1,5 @@
-export class priorityQueue_Dijkstra<T> {
+// https://www.interviewcake.com/concept/java/dijkstras-algorithm
+class priorityQueue_Dijkstra<T> {
   private queue: { value: T; priority: number }[];
   constructor() {
     this.queue = [];
@@ -85,7 +86,7 @@ export class priorityQueue_Dijkstra<T> {
   }
 }
 
-function dijkstra(v: number, edges: number[][], src: number) {
+export function dijkstra(v: number, edges: number[][], src: number) {
   const res = Array(v).fill(Infinity);
 
   res[src] = 0;
@@ -108,19 +109,25 @@ function dijkstra(v: number, edges: number[][], src: number) {
 
     while (pQ.length > 0) {
       const qLen = pQ.length;
-
+      const queuedNodes: { value: number; priority: number }[] = [];
       for (let i = 0; i < qLen; i++) {
-        const node = pQ.dequeue();
+        queuedNodes.push(pQ.dequeue()!);
+      }
+
+      for (let i = 0; i < queuedNodes.length; i++) {
+        const node = queuedNodes[i];
 
         if (node) {
           const curDistance = node.priority;
           const connectedNodes = adjList[node.value];
 
-          for (const curNode of connectedNodes) {
-            if (curDistance + curNode.w < res[curNode.dst]) {
-              pQ.enqueue(curNode.dst, curDistance + curNode.w);
+          if (connectedNodes) {
+            for (const curNode of connectedNodes) {
+              if (curDistance + curNode.w < res[curNode.dst]) {
+                pQ.enqueue(curNode.dst, curDistance + curNode.w);
 
-              (res[curNode.dst] = curNode.dst), curDistance;
+                res[curNode.dst] = curDistance + curNode.w;
+              }
             }
           }
         }
@@ -141,6 +148,6 @@ console.log(
       [1, 2, 3],
       [0, 2, 6],
     ],
-    2,
+    0,
   ),
 );
