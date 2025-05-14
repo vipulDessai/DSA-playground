@@ -29,7 +29,7 @@
 
 ## easy
 
-- [Two Sum](https://leetcode.com/problems/two-sum/)
+- [Two Sum](https://leetcode.com/problems/two-sum/) - can be solved using 2 pointers [refer](./my-list.md#easy-3)
 - [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
 - [Single Number](https://leetcode.com/problems/single-number/)
 - [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/)
@@ -104,6 +104,7 @@
 
 ## easy
 
+- [Two sum](https://leetcode.com/problems/two-sum/description/) - can be solved using hash [refer](./my-list.md#easy-1)
 - [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
 
 ## medium
