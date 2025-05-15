@@ -56,7 +56,7 @@
 - [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
 - [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 - [Contiguous Array](https://leetcode.com/problems/contiguous-array/)
-- [4Sum II](https://leetcode.com/problems/4sum-ii/)
+- [3Sum](https://leetcode.com/problems/3sum/description/), [4Sum](https://leetcode.com/problems/4sum/description/), [4Sum II](https://leetcode.com/problems/4sum-ii/)
 - [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)
 - [Design Twitter](https://leetcode.com/problems/design-twitter/)
 - [Encode and Decode TinyURL](https://leetcode.com/problems/encode-and-decode-tinyurl/)

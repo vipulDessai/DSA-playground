@@ -16,7 +16,7 @@ class QueueLinkedList implements QueueLinkedElemType {
   }
 }
 
-class MyCircularDeque {
+export class MyCircularDeque {
   maxSize: number;
   size: number = 0;
   l: QueueLinkedList | null = null;
