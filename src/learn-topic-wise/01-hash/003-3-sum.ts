@@ -1,4 +1,4 @@
-function threeSum(nums: number[]): number[][] {
+export function threeSum(nums: number[]): number[][] {
   const n = nums.length;
   nums.sort((a, b) => a - b); // Sorting helps with efficient searching
   const result = new Set<string>(); // Using a Set to store unique triplets
