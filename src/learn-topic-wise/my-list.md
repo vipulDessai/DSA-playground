@@ -1,6 +1,6 @@
 # pure array based
 
-## easy
+## easy - pure array based
 
 - [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 - [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
@@ -23,13 +23,16 @@
 
 # subarray whose sum is k
 
+## medium - subarray whose sum is k
+
 - [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)
 
 # Hash
 
-## easy
+## easy - Hash
 
-- [Two Sum](https://leetcode.com/problems/two-sum/) - can be solved using 2 pointers [refer](./my-list.md#easy-3)
+- [Two Sum](https://leetcode.com/problems/two-sum/)
+  - can be solved using 2 pointers [refer](./my-list.md#easy---two-pointers)
 - [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
 - [Single Number](https://leetcode.com/problems/single-number/)
 - [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/)
@@ -50,7 +53,7 @@
 - [Find Words That Can Be Formed by Characters](https://leetcode.com/problems/find-words-that-can-be-formed-by-characters/)
 - [Subdomain Visit Count](https://leetcode.com/problems/subdomain-visit-count/)
 
-## medium
+## medium - Hash
 
 - [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
 - [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
@@ -74,9 +77,10 @@
 - [LRU Cache](https://leetcode.com/problems/lru-cache/)
 - [Insert Delete GetRandom O(1) - Duplicates allowed](https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/)
 
-## hard
+## hard - Hash
 
-- [First Missing Positive](https://leetcode.com/problems/first-missing-positive) - also cyclic sort - [refer below](./my-list.md#hard-1)
+- [First Missing Positive](https://leetcode.com/problems/first-missing-positive)
+  - can be solved using cyclic sort - [refer](./my-list.md#hard---cyclic-sort)
 - [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
 - [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
 - [Word Ladder I](https://leetcode.com/problems/word-ladder/), [Word Ladder II](https://leetcode.com/problems/word-ladder-ii/)
@@ -94,7 +98,7 @@
 
 # Heap
 
-## easy
+## easy - Heap
 
 - [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
 - [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
@@ -102,12 +106,13 @@
 
 # Two pointers
 
-## easy
+## easy - Two pointers
 
-- [Two sum](https://leetcode.com/problems/two-sum/description/) - can be solved using hash [refer](./my-list.md#easy-1)
+- [Two sum](https://leetcode.com/problems/two-sum/description/)
+  - can be solved using hash [refer](./my-list.md#easy---hash)
 - [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
 
-## medium
+## medium - Two pointers
 
 - [Sort colors](https://leetcode.com/problems/sort-colors/)
 
@@ -115,18 +120,27 @@
 
 ## cyclic sort
 
-### hard
+### hard - cyclic sort
 
-- [First Missing Positive](https://leetcode.com/problems/first-missing-positive) - can be solved using hash as well - [refer above](./my-list.md#hard)
+- [First Missing Positive](https://leetcode.com/problems/first-missing-positive)
+  - can be solved using hash as well - [refer](./my-list.md#hard---hash)
 
 # Sliding window
 
-## medium
+## medium - Sliding window
 
 - [Arithmetic Slices](https://leetcode.com/problems/arithmetic-slices/description/)
 
 # Bitwise
 
-## hard
+## hard - Bitwise
 
 - [Smallest Sufficient Team](https://leetcode.com/problems/smallest-sufficient-team/)
+  - need dp as well - [refer](./my-list.md#hard---dynamic-programming)
+
+# Dynamic Programming
+
+## hard - Dynamic Programming
+
+- [Smallest Sufficient Team](https://leetcode.com/problems/smallest-sufficient-team/)
+  - need bitwise as well - [refer](./my-list.md#hard---bitwise)
