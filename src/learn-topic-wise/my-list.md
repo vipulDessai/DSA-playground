@@ -84,6 +84,12 @@
 - [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
 - [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
 - [Word Ladder I](https://leetcode.com/problems/word-ladder/), [Word Ladder II](https://leetcode.com/problems/word-ladder-ii/)
+
+  - word ladder II - failing
+    - uses bidirectional BFS, yet it fails at TLE 33
+    - may be refer [this](https://leetcode.com/problems/word-ladder-ii/solutions/6319954/i-spent-3-hours-developing-this-fastest-approach-check-it-out-and-don-t-forget-to-drop-a-like/)
+    - basically it needs effiecient BFS only using depth map
+
 - [Reconstruct Itinerary](https://leetcode.com/problems/reconstruct-itinerary/)
 - [Shortest Path to Get All Keys](https://leetcode.com/problems/shortest-path-to-get-all-keys/)
 - [Alien Dictionary](https://leetcode.com/problems/alien-dictionary/)

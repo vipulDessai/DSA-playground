@@ -1,169 +1,677 @@
-export const foo = 'bar';
-
 // https://leetcode.com/problems/word-ladder-ii/description/
-function processWords(wordList: string[]): Map<string, string[]> {
-  const n = wordList.length;
+// TLE at 33 - refer - https://leetcode.com/problems/word-ladder-ii/solutions/6319954/i-spent-3-hours-developing-this-fastest-approach-check-it-out-and-don-t-forget-to-drop-a-like/
+export class WordLadderII_MySoln {
+  wordSet: Set<string>;
+  beginWord: string;
+  endWord: string;
+  graph: Map<string, string[]> = new Map();
+  res: Set<string> = new Set();
+  minLenRes: number = Infinity;
+  adjList: Map<string, string[]> = new Map();
 
-  const map = new Map<string, string[]>();
-  for (const word of wordList) {
-    for (let i = 0; i < word.length; ++i) {
-      const pattern = word.substring(0, i) + '*' + word.substring(i + 1);
+  constructor(_beginWord: string, _endWord: string, _wordList: string[]) {
+    this.beginWord = _beginWord;
+    this.endWord = _endWord;
+    this.wordSet = new Set([_beginWord, ..._wordList]);
 
-      if (!map.has(pattern)) {
-        map.set(pattern, []);
-      }
-
-      map.get(pattern)!.push(word);
-    }
+    this.createAdjList();
   }
 
-  return map;
-}
-
-function findLadders_my_solution(
-  beginWord: string,
-  endWord: string,
-  wordList: string[],
-): string[][] {
-  const map = processWords(wordList);
-
-  // TODO: need to use bidirectional BFS
-  const q = [beginWord],
-    visited = new Set<string>(),
-    res: string[][] = [];
-  visited.add(beginWord);
-
-  let maxLen = 1;
-  while (q.length > 0) {
-    const qLen = q.length;
-
-    for (let i = 0; i < qLen; ++i) {
-      const curWord = q.shift()!;
-
-      for (let j = 0; j < curWord.length; ++j) {
-        const pattern =
-          curWord.substring(0, j) + '*' + curWord.substring(j + 1);
-
-        const pList = map.get(pattern) || [];
-        for (let k = 0; k < pList.length; ++k) {
-          const word = pList[k];
-
-          if (word === endWord) {
-            // use the DFS to find the string array path
-            ++maxLen;
-          }
-
-          if (!visited.has(word)) {
-            q.push(word);
-            visited.add(word);
-          }
-        }
-      }
+  public findLadders() {
+    if (!this.wordSet.has(this.endWord)) {
+      return [];
     }
 
-    ++maxLen;
+    this.bfs();
+
+    return [...this.res].map((item) => JSON.parse(item));
   }
 
-  return res;
-}
-
-class WordLadderII {
-  private wordSet: Set<string>;
-  private graph: Map<string, string[]> = new Map();
-
-  constructor(
-    private beginWord: string,
-    private endWord: string,
-    wordList: string[],
-  ) {
-    this.wordSet = new Set(wordList);
-  }
-
-  public createAdjList(beginWord: string, wordList: string[]) {
-    wordList.unshift(beginWord);
-    const words = new Set([...wordList]);
-
-    const adjList = new Map<string, string[]>();
-    for (const word of wordList) {
-      adjList.set(word, []);
+  private createAdjList() {
+    for (const word of this.wordSet) {
+      this.adjList.set(word, []);
 
       for (let i = 0; i < word.length; i++) {
         for (const c of 'abcdefghijklmnopqrstuvwxyz') {
           const pattern = word.substring(0, i) + c + word.substring(i + 1);
 
-          if (words.has(pattern) && word !== pattern) {
-            adjList.get(word)!.push(pattern);
+          if (this.wordSet.has(pattern) && word !== pattern) {
+            this.adjList.get(word)!.push(pattern);
           }
         }
       }
     }
-
-    return adjList;
   }
 
-  public findLadders(): string[][] {
-    if (!this.wordSet.has(this.endWord)) return [];
+  private bfs() {
+    const qFront = [this.beginWord],
+      frontVisited = new Set<string>(),
+      frontGraph = new Map<string, string[]>();
 
-    if (!this.bfs()) return [];
+    const qBack = [this.endWord],
+      backVisited = new Set<string>([this.endWord]),
+      backGraph = new Map<string, string[]>();
 
-    const results: string[][] = [];
-    this.dfs(this.beginWord, [this.beginWord], results);
-    return results;
-  }
-
-  private bfs(): boolean {
-    let frontQueue: Set<string> = new Set([this.beginWord]);
-    let backQueue: Set<string> = new Set([this.endWord]);
-    let frontVisited: Set<string> = new Set([this.beginWord]);
-    let backVisited: Set<string> = new Set([this.endWord]);
-    let found = false;
-
-    while (frontQueue.size && backQueue.size && !found) {
-      if (frontQueue.size > backQueue.size) {
-        [frontQueue, backQueue] = [backQueue, frontQueue];
-        [frontVisited, backVisited] = [backVisited, frontVisited];
+    while (qFront.length > 0 && qBack.length > 0) {
+      // why set front queue visited after the next level is calculated
+      // because if a pattern is set to be ignored while the next level is calculated
+      // then few graph node that can lead to the same pattern will NOT be calculated
+      //
+      // similarly front queue visited cant be set while processing the next level
+      // beacause if we dont process the entire next level batch
+      // then while iterating over the next level, the earlier nodes will visit the
+      // nodes which are part of the current level
+      // ex. next level is [dog, log], while we process dog, if we do not know log is not
+      // to be visited then dog graph will have cog and log
+      // but instead its suppose to be dog -> cog and log -< cog
+      for (const nextLvlWord of qFront) {
+        frontVisited.add(nextLvlWord);
       }
 
-      let nextLevel: Set<string> = new Set();
-      for (let word of frontQueue) {
-        for (let i = 0; i < word.length; i++) {
-          for (let c of 'abcdefghijklmnopqrstuvwxyz') {
-            let newWord = word.slice(0, i) + c + word.slice(i + 1);
-            if (backVisited.has(newWord)) {
-              found = true;
+      for (const nextLvlWord of qBack) {
+        backVisited.add(nextLvlWord);
+      }
+
+      for (const nextLvlWord of qFront) {
+        if (backVisited.has(nextLvlWord)) {
+          this.initGraph(frontGraph, backGraph);
+
+          this.dfs(this.beginWord, [this.beginWord]);
+
+          return;
+        }
+      }
+
+      // Just using a single BFS doesnt at all work
+      // if (frontVisited.has(this.endWord)) {
+      //   this.initGraph(frontGraph, backGraph);
+
+      //   this.dfs(this.beginWord, [this.beginWord]);
+
+      //   return;
+      // }
+
+      const qFLen = qFront.length;
+      for (let i = 0; i < qFLen; ++i) {
+        const word = qFront.shift()!;
+        frontGraph.set(word, []);
+
+        const nextLvlWords = this.adjList.get(word) || [];
+
+        for (let j = 0; j < nextLvlWords.length; j++) {
+          const nextWord = nextLvlWords[j];
+          if (
+            // below check is for checking the previous visited node
+            // ex. while on hot, hot can lead to dot, lot, hit
+            // but hit is already visited
+            !frontVisited.has(nextWord)
+          ) {
+            if (!frontGraph.has(word)) {
+              frontGraph.set(word, []);
             }
-            if (this.wordSet.has(newWord) && !frontVisited.has(newWord)) {
-              nextLevel.add(newWord);
-              frontVisited.add(newWord);
-              if (!this.graph.has(word)) this.graph.set(word, []);
-              this.graph.get(word)!.push(newWord);
-            }
+
+            frontGraph.get(word)!.push(nextWord);
+
+            qFront.push(nextWord);
           }
         }
       }
-      frontQueue = nextLevel;
+
+      const qBLen = qBack.length;
+      for (let i = 0; i < qBLen; ++i) {
+        const word = qBack.shift()!;
+
+        const nextLvlWords = this.adjList.get(word) || [];
+
+        for (let j = 0; j < nextLvlWords.length; j++) {
+          const nextWord = nextLvlWords[j];
+          if (!backVisited.has(nextWord)) {
+            if (!backGraph.has(nextWord)) {
+              backGraph.set(nextWord, []);
+            }
+
+            backGraph.get(nextWord)!.push(word);
+
+            qBack.push(nextWord);
+          }
+        }
+      }
     }
-    return found;
   }
 
-  private dfs(word: string, path: string[], results: string[][]): void {
+  private initGraph(
+    _front: Map<string, string[]>,
+    _back: Map<string, string[]>,
+  ) {
+    for (const [key, value] of _front) {
+      this.graph.set(key, value);
+    }
+
+    for (const [key, value] of _back) {
+      this.graph.set(key, value);
+    }
+  }
+
+  private dfs(word: string, path: string[]) {
     if (word === this.endWord) {
-      results.push([...path]);
+      if (path.length < this.minLenRes) {
+        this.res = new Set([JSON.stringify(path)]);
+        this.minLenRes = path.length;
+      } else if (path.length === this.minLenRes) {
+        this.res.add(JSON.stringify(path));
+      }
+
       return;
     }
+
     if (!this.graph.has(word)) return;
 
     for (const nextWord of this.graph.get(word)!) {
       path.push(nextWord);
-      this.dfs(nextWord, path, results);
+      this.dfs(nextWord, path);
       path.pop();
     }
   }
 }
 
 // Example usage:
-const wordList = ['hot', 'dot', 'dog', 'lot', 'log', 'cog'];
-const ladder = new WordLadderII('hit', 'cog', wordList);
-// console.log(ladder.findLadders()); // Output: [["hit","hot","dot","dog","cog"], ["hit","hot","lot","log","cog"]]
+var wordList = ['hot', 'dot', 'dog', 'lot', 'log', 'cog'];
+var b = 'hit',
+  e = 'cog';
 
-console.log(ladder.createAdjList('hit', wordList));
+b = 'aaaaa';
+e = 'ggggg';
+wordList = [
+  'aaaaa',
+  'caaaa',
+  'cbaaa',
+  'daaaa',
+  'dbaaa',
+  'eaaaa',
+  'ebaaa',
+  'faaaa',
+  'fbaaa',
+  'gaaaa',
+  'gbaaa',
+  'haaaa',
+  'hbaaa',
+  'iaaaa',
+  'ibaaa',
+  'jaaaa',
+  'jbaaa',
+  'kaaaa',
+  'kbaaa',
+  'laaaa',
+  'lbaaa',
+  'maaaa',
+  'mbaaa',
+  'naaaa',
+  'nbaaa',
+  'oaaaa',
+  'obaaa',
+  'paaaa',
+  'pbaaa',
+  'bbaaa',
+  'bbcaa',
+  'bbcba',
+  'bbdaa',
+  'bbdba',
+  'bbeaa',
+  'bbeba',
+  'bbfaa',
+  'bbfba',
+  'bbgaa',
+  'bbgba',
+  'bbhaa',
+  'bbhba',
+  'bbiaa',
+  'bbiba',
+  'bbjaa',
+  'bbjba',
+  'bbkaa',
+  'bbkba',
+  'bblaa',
+  'bblba',
+  'bbmaa',
+  'bbmba',
+  'bbnaa',
+  'bbnba',
+  'bboaa',
+  'bboba',
+  'bbpaa',
+  'bbpba',
+  'bbbba',
+  'abbba',
+  'acbba',
+  'dbbba',
+  'dcbba',
+  'ebbba',
+  'ecbba',
+  'fbbba',
+  'fcbba',
+  'gbbba',
+  'gcbba',
+  'hbbba',
+  'hcbba',
+  'ibbba',
+  'icbba',
+  'jbbba',
+  'jcbba',
+  'kbbba',
+  'kcbba',
+  'lbbba',
+  'lcbba',
+  'mbbba',
+  'mcbba',
+  'nbbba',
+  'ncbba',
+  'obbba',
+  'ocbba',
+  'pbbba',
+  'pcbba',
+  'ccbba',
+  'ccaba',
+  'ccaca',
+  'ccdba',
+  'ccdca',
+  'cceba',
+  'cceca',
+  'ccfba',
+  'ccfca',
+  'ccgba',
+  'ccgca',
+  'cchba',
+  'cchca',
+  'cciba',
+  'ccica',
+  'ccjba',
+  'ccjca',
+  'cckba',
+  'cckca',
+  'cclba',
+  'cclca',
+  'ccmba',
+  'ccmca',
+  'ccnba',
+  'ccnca',
+  'ccoba',
+  'ccoca',
+  'ccpba',
+  'ccpca',
+  'cccca',
+  'accca',
+  'adcca',
+  'bccca',
+  'bdcca',
+  'eccca',
+  'edcca',
+  'fccca',
+  'fdcca',
+  'gccca',
+  'gdcca',
+  'hccca',
+  'hdcca',
+  'iccca',
+  'idcca',
+  'jccca',
+  'jdcca',
+  'kccca',
+  'kdcca',
+  'lccca',
+  'ldcca',
+  'mccca',
+  'mdcca',
+  'nccca',
+  'ndcca',
+  'occca',
+  'odcca',
+  'pccca',
+  'pdcca',
+  'ddcca',
+  'ddaca',
+  'ddada',
+  'ddbca',
+  'ddbda',
+  'ddeca',
+  'ddeda',
+  'ddfca',
+  'ddfda',
+  'ddgca',
+  'ddgda',
+  'ddhca',
+  'ddhda',
+  'ddica',
+  'ddida',
+  'ddjca',
+  'ddjda',
+  'ddkca',
+  'ddkda',
+  'ddlca',
+  'ddlda',
+  'ddmca',
+  'ddmda',
+  'ddnca',
+  'ddnda',
+  'ddoca',
+  'ddoda',
+  'ddpca',
+  'ddpda',
+  'dddda',
+  'addda',
+  'aedda',
+  'bddda',
+  'bedda',
+  'cddda',
+  'cedda',
+  'fddda',
+  'fedda',
+  'gddda',
+  'gedda',
+  'hddda',
+  'hedda',
+  'iddda',
+  'iedda',
+  'jddda',
+  'jedda',
+  'kddda',
+  'kedda',
+  'lddda',
+  'ledda',
+  'mddda',
+  'medda',
+  'nddda',
+  'nedda',
+  'oddda',
+  'oedda',
+  'pddda',
+  'pedda',
+  'eedda',
+  'eeada',
+  'eeaea',
+  'eebda',
+  'eebea',
+  'eecda',
+  'eecea',
+  'eefda',
+  'eefea',
+  'eegda',
+  'eegea',
+  'eehda',
+  'eehea',
+  'eeida',
+  'eeiea',
+  'eejda',
+  'eejea',
+  'eekda',
+  'eekea',
+  'eelda',
+  'eelea',
+  'eemda',
+  'eemea',
+  'eenda',
+  'eenea',
+  'eeoda',
+  'eeoea',
+  'eepda',
+  'eepea',
+  'eeeea',
+  'ggggg',
+  'agggg',
+  'ahggg',
+  'bgggg',
+  'bhggg',
+  'cgggg',
+  'chggg',
+  'dgggg',
+  'dhggg',
+  'egggg',
+  'ehggg',
+  'fgggg',
+  'fhggg',
+  'igggg',
+  'ihggg',
+  'jgggg',
+  'jhggg',
+  'kgggg',
+  'khggg',
+  'lgggg',
+  'lhggg',
+  'mgggg',
+  'mhggg',
+  'ngggg',
+  'nhggg',
+  'ogggg',
+  'ohggg',
+  'pgggg',
+  'phggg',
+  'hhggg',
+  'hhagg',
+  'hhahg',
+  'hhbgg',
+  'hhbhg',
+  'hhcgg',
+  'hhchg',
+  'hhdgg',
+  'hhdhg',
+  'hhegg',
+  'hhehg',
+  'hhfgg',
+  'hhfhg',
+  'hhigg',
+  'hhihg',
+  'hhjgg',
+  'hhjhg',
+  'hhkgg',
+  'hhkhg',
+  'hhlgg',
+  'hhlhg',
+  'hhmgg',
+  'hhmhg',
+  'hhngg',
+  'hhnhg',
+  'hhogg',
+  'hhohg',
+  'hhpgg',
+  'hhphg',
+  'hhhhg',
+  'ahhhg',
+  'aihhg',
+  'bhhhg',
+  'bihhg',
+  'chhhg',
+  'cihhg',
+  'dhhhg',
+  'dihhg',
+  'ehhhg',
+  'eihhg',
+  'fhhhg',
+  'fihhg',
+  'ghhhg',
+  'gihhg',
+  'jhhhg',
+  'jihhg',
+  'khhhg',
+  'kihhg',
+  'lhhhg',
+  'lihhg',
+  'mhhhg',
+  'mihhg',
+  'nhhhg',
+  'nihhg',
+  'ohhhg',
+  'oihhg',
+  'phhhg',
+  'pihhg',
+  'iihhg',
+  'iiahg',
+  'iiaig',
+  'iibhg',
+  'iibig',
+  'iichg',
+  'iicig',
+  'iidhg',
+  'iidig',
+  'iiehg',
+  'iieig',
+  'iifhg',
+  'iifig',
+  'iighg',
+  'iigig',
+  'iijhg',
+  'iijig',
+  'iikhg',
+  'iikig',
+  'iilhg',
+  'iilig',
+  'iimhg',
+  'iimig',
+  'iinhg',
+  'iinig',
+  'iiohg',
+  'iioig',
+  'iiphg',
+  'iipig',
+  'iiiig',
+  'aiiig',
+  'ajiig',
+  'biiig',
+  'bjiig',
+  'ciiig',
+  'cjiig',
+  'diiig',
+  'djiig',
+  'eiiig',
+  'ejiig',
+  'fiiig',
+  'fjiig',
+  'giiig',
+  'gjiig',
+  'hiiig',
+  'hjiig',
+  'kiiig',
+  'kjiig',
+  'liiig',
+  'ljiig',
+  'miiig',
+  'mjiig',
+  'niiig',
+  'njiig',
+  'oiiig',
+  'ojiig',
+  'piiig',
+  'pjiig',
+  'jjiig',
+  'jjaig',
+  'jjajg',
+  'jjbig',
+  'jjbjg',
+  'jjcig',
+  'jjcjg',
+  'jjdig',
+  'jjdjg',
+  'jjeig',
+  'jjejg',
+  'jjfig',
+  'jjfjg',
+  'jjgig',
+  'jjgjg',
+  'jjhig',
+  'jjhjg',
+  'jjkig',
+  'jjkjg',
+  'jjlig',
+  'jjljg',
+  'jjmig',
+  'jjmjg',
+  'jjnig',
+  'jjnjg',
+  'jjoig',
+  'jjojg',
+  'jjpig',
+  'jjpjg',
+  'jjjjg',
+  'ajjjg',
+  'akjjg',
+  'bjjjg',
+  'bkjjg',
+  'cjjjg',
+  'ckjjg',
+  'djjjg',
+  'dkjjg',
+  'ejjjg',
+  'ekjjg',
+  'fjjjg',
+  'fkjjg',
+  'gjjjg',
+  'gkjjg',
+  'hjjjg',
+  'hkjjg',
+  'ijjjg',
+  'ikjjg',
+  'ljjjg',
+  'lkjjg',
+  'mjjjg',
+  'mkjjg',
+  'njjjg',
+  'nkjjg',
+  'ojjjg',
+  'okjjg',
+  'pjjjg',
+  'pkjjg',
+  'kkjjg',
+  'kkajg',
+  'kkakg',
+  'kkbjg',
+  'kkbkg',
+  'kkcjg',
+  'kkckg',
+  'kkdjg',
+  'kkdkg',
+  'kkejg',
+  'kkekg',
+  'kkfjg',
+  'kkfkg',
+  'kkgjg',
+  'kkgkg',
+  'kkhjg',
+  'kkhkg',
+  'kkijg',
+  'kkikg',
+  'kkljg',
+  'kklkg',
+  'kkmjg',
+  'kkmkg',
+  'kknjg',
+  'kknkg',
+  'kkojg',
+  'kkokg',
+  'kkpjg',
+  'kkpkg',
+  'kkkkg',
+  'ggggx',
+  'gggxx',
+  'ggxxx',
+  'gxxxx',
+  'xxxxx',
+  'xxxxy',
+  'xxxyy',
+  'xxyyy',
+  'xyyyy',
+  'yyyyy',
+  'yyyyw',
+  'yyyww',
+  'yywww',
+  'ywwww',
+  'wwwww',
+  'wwvww',
+  'wvvww',
+  'vvvww',
+  'vvvwz',
+  'avvwz',
+  'aavwz',
+  'aaawz',
+  'aaaaz',
+];
+
+const wl = new WordLadderII_MySoln(b, e, wordList);
+console.log(wl.findLadders());
