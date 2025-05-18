@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/word-ladder-ii/description/
-// TLE at 33 - refer - https://leetcode.com/problems/word-ladder-ii/solutions/6319954/i-spent-3-hours-developing-this-fastest-approach-check-it-out-and-don-t-forget-to-drop-a-like/
+// TLE at 33
 export class WordLadderII_MySoln {
   wordSet: Set<string>;
   beginWord: string;
@@ -675,3 +675,75 @@ wordList = [
 
 const wl = new WordLadderII_MySoln(b, e, wordList);
 console.log(wl.findLadders());
+
+// Working - https://leetcode.com/problems/word-ladder-ii/solutions/6319954/i-spent-3-hours-developing-this-fastest-approach-check-it-out-and-don-t-forget-to-drop-a-like/
+class WordLadderII_others {
+  private wordSet: Set<string>;
+  private depthMap: Map<string, number> = new Map();
+  private results: string[][] = [];
+
+  constructor(
+    private beginWord: string,
+    private endWord: string,
+    wordList: string[],
+  ) {
+    this.wordSet = new Set(wordList);
+  }
+
+  public findLadders(): string[][] {
+    if (!this.wordSet.has(this.endWord)) return [];
+
+    this.bfs();
+    if (!this.depthMap.has(this.endWord)) return [];
+
+    this.dfs(this.endWord, [this.endWord]);
+    return this.results;
+  }
+
+  private bfs(): void {
+    const queue: string[] = [this.beginWord];
+    this.depthMap.set(this.beginWord, 1);
+    this.wordSet.delete(this.beginWord);
+
+    while (queue.length) {
+      const word = queue.shift()!;
+      const steps = this.depthMap.get(word)!;
+      if (word === this.endWord) break;
+
+      for (let i = 0; i < word.length; i++) {
+        const original = word[i];
+        for (const ch of 'abcdefghijklmnopqrstuvwxyz') {
+          const newWord = word.slice(0, i) + ch + word.slice(i + 1);
+          if (this.wordSet.has(newWord)) {
+            queue.push(newWord);
+            this.wordSet.delete(newWord);
+            this.depthMap.set(newWord, steps + 1);
+          }
+        }
+      }
+    }
+  }
+
+  private dfs(word: string, path: string[]): void {
+    if (word === this.beginWord) {
+      this.results.push([...path].reverse());
+      return;
+    }
+
+    const steps = this.depthMap.get(word)!;
+    for (let i = 0; i < word.length; i++) {
+      const original = word[i];
+      for (const ch of 'abcdefghijklmnopqrstuvwxyz') {
+        const newWord = word.slice(0, i) + ch + word.slice(i + 1);
+        if (
+          this.depthMap.has(newWord) &&
+          this.depthMap.get(newWord)! + 1 === steps
+        ) {
+          path.push(newWord);
+          this.dfs(newWord, path);
+          path.pop();
+        }
+      }
+    }
+  }
+}
