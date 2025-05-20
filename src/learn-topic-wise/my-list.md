@@ -58,6 +58,7 @@
 - [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
 - [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
 - [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+  - needs sliding window as well - [refer](./my-list.md#medium---sliding-window)
 - [Contiguous Array](https://leetcode.com/problems/contiguous-array/)
 - [3Sum](https://leetcode.com/problems/3sum/description/), [4Sum](https://leetcode.com/problems/4sum/description/), [4Sum II](https://leetcode.com/problems/4sum-ii/)
 - [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)
@@ -136,6 +137,8 @@
 ## medium - Sliding window
 
 - [Arithmetic Slices](https://leetcode.com/problems/arithmetic-slices/description/)
+- [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+  - needs hash as well [refer](./my-list.md#medium---hash)
 
 # Bitwise
 
