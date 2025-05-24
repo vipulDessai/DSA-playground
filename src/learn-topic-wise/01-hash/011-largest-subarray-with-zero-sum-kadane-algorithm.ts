@@ -1,4 +1,4 @@
-function largestSubArray(nums: number[]): number {
+export function largestSubArray(nums: number[]): number {
   let max = 0;
   let prefixSum = 0;
 

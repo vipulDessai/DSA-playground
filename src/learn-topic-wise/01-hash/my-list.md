@@ -26,6 +26,7 @@
 ## medium - subarray whose sum is k
 
 - [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)
+  - need a hash as well - [refer](./my-list.md#medium---hash)
 
 # Hash
 
@@ -61,7 +62,10 @@
   - needs sliding window as well - [refer](./my-list.md#medium---sliding-window)
 - [Contiguous Array](https://leetcode.com/problems/contiguous-array/)
 - [3Sum](https://leetcode.com/problems/3sum/description/), [4Sum](https://leetcode.com/problems/4sum/description/), [4Sum II](https://leetcode.com/problems/4sum-ii/)
+- [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)
+  - is part of - [refer](./my-list.md#medium---subarray-whose-sum-is-k)
 - [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)
+  - can be solved using pure linked list - [refer](./my-list.md#medium---linked-list)
 - [Design Twitter](https://leetcode.com/problems/design-twitter/)
 - [Encode and Decode TinyURL](https://leetcode.com/problems/encode-and-decode-tinyurl/)
 - [Brick Wall](https://leetcode.com/problems/brick-wall/)
@@ -139,6 +143,13 @@
 - [Arithmetic Slices](https://leetcode.com/problems/arithmetic-slices/description/)
 - [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
   - needs hash as well [refer](./my-list.md#medium---hash)
+
+# Linked list
+
+## medium - linked list
+
+- [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)
+  - can be solved using pure linked list - [refer](./my-list.md#medium---hash)
 
 # Bitwise
 
