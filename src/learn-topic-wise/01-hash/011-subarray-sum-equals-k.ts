@@ -21,3 +21,5 @@ function subarraySum(nums: number[], k: number): number {
 
   return count;
 }
+
+export const foo = "bar";
