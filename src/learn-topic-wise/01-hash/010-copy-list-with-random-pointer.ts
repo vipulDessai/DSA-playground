@@ -19,11 +19,13 @@ function copyRandomList_pure_linkedList(head: _Node | null): _Node | null {
   // Step 1: Clone nodes and insert them next to original nodes
   let cur: _Node | null = head;
   while (cur) {
-    let copy = new _Node(cur.val);
+    const copy = new _Node(cur.val);
 
     const next = cur.next;
+    copy.next = next;
     cur.next = copy;
-    cur = copy.next = next;
+
+    cur = next;
   }
 
   // Step 2: Assign random pointers
@@ -50,10 +52,10 @@ function copyRandomList_pure_linkedList(head: _Node | null): _Node | null {
     const next = cur.next!.next;
 
     // extract the copy
-    if (copyCur) {
-      copyCur.next = cur.next;
-      copyCur = copyCur.next;
-    }
+    // copy cant be null because, if cur is truthy
+    // then copy is valid as well
+    copyCur!.next = cur.next;
+    copyCur = copyCur!.next;
 
     // restore the original (optional)
     cur.next = next;

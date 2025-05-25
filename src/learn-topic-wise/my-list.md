@@ -113,7 +113,9 @@
 
 - [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
 - [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
+- [K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/)
 - [Dijktra Algorithm](https://www.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1)
+- [Find Subsequence of Length K With the Largest Sum](https://leetcode.com/problems/find-subsequence-of-length-k-with-the-largest-sum/)
 
 # Two pointers
 

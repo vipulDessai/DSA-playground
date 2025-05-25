@@ -9,12 +9,8 @@
 
 if you have to find kth largest/ k most frequent use Min Heap, and when you need kth smallest/ k list occuring use Max Heap
 
-- https://leetcode.com/problems/kth-largest-element-in-an-array/ - kth largest
-- https://leetcode.com/problems/top-k-frequent-elements/ - IMP
 - https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/ ------- MATRIX QUESTION
-- https://leetcode.com/problems/k-closest-points-to-origin/
 - https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/
-- https://leetcode.com/problems/find-subsequence-of-length-k-with-the-largest-sum/
 - https://leetcode.com/problems/rearrange-string-k-distance-apart/
 
 ### Template:

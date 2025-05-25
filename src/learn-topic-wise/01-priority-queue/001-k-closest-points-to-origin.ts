@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/k-closest-points-to-origin/
+
 import { BSTPriorityQueue } from './000-priority-queue-02-bst-based';
 
 function kClosest(points: number[][], k: number): number[][] {
