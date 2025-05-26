@@ -1,8 +1,9 @@
+// https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/
 function minimumSize(nums: number[], maxOperations: number): number {
   function isFeasible(mid: number) {
     let curOps = 0;
     for (let i = 0; i < nums.length; i++) {
-      curOps += (nums[i] - 1) / mid;
+      curOps += Math.ceil(nums[i] / mid) - 1;
 
       if (curOps > maxOperations) {
         return false;

@@ -146,6 +146,12 @@
 - [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
   - needs hash as well [refer](./my-list.md#medium---hash)
 
+# Binary Search
+
+## medium - Binary Search
+
+- [Minimum Limit of Balls in a Bag](https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/)
+
 # Linked list
 
 ## medium - linked list
