@@ -1,40 +1,36 @@
-// https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/
-function minimumSize(nums: number[], maxOperations: number): number {
-  function isFeasible(mid: number) {
-    let curOps = 0;
-    for (let i = 0; i < nums.length; i++) {
-      curOps += Math.ceil(nums[i] / mid) - 1;
+// https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/description/
+function feasible(nums: number[], maxOperations: number, curMaxBalls: number) {
+  let total = 0;
 
-      if (curOps > maxOperations) {
-        return false;
-      }
+  for (const num of nums) {
+    total += Math.ceil(num / curMaxBalls) - 1;
+
+    if (total > maxOperations) {
+      return false;
     }
-
-    return true;
   }
 
+  return true;
+}
+
+function minimumSize(nums: number[], maxOperations: number): number {
+  // if we had infinite operation then the minimum penalty would have been
+  // 1, coz each ball would have been in a seperate bag
   let l = 1;
-  let max = nums[0];
-  for (let i = 0; i < nums.length; i++) {
-    max = Math.max(max, nums[i]);
-  }
-  let r = max;
+  let r = Math.max(...nums);
 
-  while (l <= r) {
-    const mid = (l + r) / 2;
-    if (isFeasible(mid)) {
-      r = mid;
+  while (l < r) {
+    const m = Math.floor(l + (r - l) / 2);
+    if (feasible(nums, maxOperations, m)) {
+      r = m;
     } else {
-      l = mid + 1;
+      l = m + 1;
     }
   }
 
   return l;
 }
 
-var inArr = [9];
-var maxOps = 2;
+console.log(minimumSize([3, 3, 6], 2));
 
-console.log(minimumSize(inArr, maxOps));
-
-export const trickToCreateJsModule = '';
+export const moduleHack = '';
