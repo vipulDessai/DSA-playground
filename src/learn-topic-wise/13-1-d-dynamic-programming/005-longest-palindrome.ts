@@ -25,3 +25,41 @@ function longestPalindrome(s: string): string {
 
   return s.substring(left, right + 1);
 }
+
+function longestPalindrome_dp(s: string): string {
+  const n = s.length;
+  if (n === 0) return '';
+
+  // DP table initialization
+  const dp: boolean[][] = Array.from({ length: n }, () => Array(n).fill(false));
+  let start = 0,
+    maxLength = 1;
+
+  // Every single character is a palindrome
+  for (let i = 0; i < n; i++) {
+    dp[i][i] = true;
+  }
+
+  // Check two-character palindromes
+  for (let i = 0; i < n - 1; i++) {
+    if (s[i] === s[i + 1]) {
+      dp[i][i + 1] = true;
+      start = i;
+      maxLength = 2;
+    }
+  }
+
+  // Check palindromes of length >= 3
+  for (let length = 3; length <= n; length++) {
+    for (let i = 0; i <= n - length; i++) {
+      const j = i + length - 1; // Ending index
+      if (s[i] === s[j] && dp[i + 1][j - 1]) {
+        dp[i][j] = true;
+        start = i;
+        maxLength = length;
+      }
+    }
+  }
+
+  return s.substring(start, start + maxLength);
+}
