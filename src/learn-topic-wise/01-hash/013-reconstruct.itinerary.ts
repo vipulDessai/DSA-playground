@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/reconstruct-itinerary/description/
 function findItinerary(tickets: string[][]): string[] {
   const adjList = new Map<string, string[]>();
 

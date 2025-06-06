@@ -96,6 +96,7 @@
     - basically it needs effiecient BFS only using depth map
 
 - [Reconstruct Itinerary](https://leetcode.com/problems/reconstruct-itinerary/)
+  - learn `001-eulerian-path-and-circuit.ts` as part of this
 - [Shortest Path to Get All Keys](https://leetcode.com/problems/shortest-path-to-get-all-keys/)
 - [Alien Dictionary](https://leetcode.com/problems/alien-dictionary/)
 - [Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/)
