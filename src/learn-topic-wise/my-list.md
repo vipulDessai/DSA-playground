@@ -98,6 +98,8 @@
 - [Reconstruct Itinerary](https://leetcode.com/problems/reconstruct-itinerary/)
   - learn `001-eulerian-path-and-circuit.ts` as part of this
 - [Shortest Path to Get All Keys](https://leetcode.com/problems/shortest-path-to-get-all-keys/)
+  - uses BFS as well - [refer](./my-list.md#hard---graph)
+  - bitwise can be used also - [refer](./my-list.md#hard---bitwise)
 - [Alien Dictionary](https://leetcode.com/problems/alien-dictionary/)
 - [Longest Valid Parentheses](https://leetcode.com/problems/longest-valid-parentheses/)
 - [Trapping Rain Water I](https://leetcode.com/problems/trapping-rain-water/), [Trapping Rain Water II](https://leetcode.com/problems/trapping-rain-water-ii/)
@@ -161,12 +163,21 @@
 - [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)
   - can be solved using pure linked list - [refer](./my-list.md#medium---hash)
 
+# Graph
+
+## hard - graph
+
+- [Shortest Path to Get All Keys](https://leetcode.com/problems/shortest-path-to-get-all-keys/)
+  - uses hash as well - [refer - hash](./my-list.md#hard---hash), [refer - bitwise](./my-list.md#hard---bitwise)
+
 # Bitwise
 
 ## hard - Bitwise
 
 - [Smallest Sufficient Team](https://leetcode.com/problems/smallest-sufficient-team/)
   - need dp as well - [refer](./my-list.md#hard---dynamic-programming)
+- [Shortest Path to Get All Keys](https://leetcode.com/problems/shortest-path-to-get-all-keys/)
+  - uses hash as well - [refer - hash](./my-list.md#hard---hash), [refer - graph](./my-list.md#hard---graph)
 
 # Dynamic Programming
 

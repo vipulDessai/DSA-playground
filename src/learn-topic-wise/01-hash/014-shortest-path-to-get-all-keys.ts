@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/shortest-path-to-get-all-keys/
+// solution with DFS - slowest
 function shortestPathAllKeys_my_implementation(grid: string[]): number {
   if (grid.length === 0) return 0;
 
@@ -93,7 +94,8 @@ function shortestPathAllKeys_my_implementation(grid: string[]): number {
 // console.log(shortestPathAllKeys_my_implementation(['@..aA', '...#B', '....b']));
 console.log(shortestPathAllKeys_my_implementation(['@a.', '#.A', 'b.B']));
 
-function shortestPathAllKeys_others(grid: string[]): number {
+// solution with BFS - medium, fastest is with bit mask
+function shortestPathAllKeys_bfs(grid: string[]): number {
   const m = grid.length,
     n = grid[0].length;
   const directions = [
@@ -118,40 +120,38 @@ function shortestPathAllKeys_others(grid: string[]): number {
     }
   }
 
+  const queue: [number, number, Set<string>][] = [[startX, startY, new Set()]];
   const seen = new Set<string>();
-  let minSteps = Infinity;
+  let steps = 0;
 
-  function dfs(x: number, y: number, keys: Set<string>, steps: number) {
-    if (keys.size === totalKeys.size) {
-      minSteps = Math.min(minSteps, steps);
-      return;
+  while (queue.length) {
+    const size = queue.length;
+    for (let i = 0; i < size; i++) {
+      const [x, y, keys] = queue.shift()!;
+      if (keys.size === totalKeys.size) return steps;
+
+      for (const [dx, dy] of directions) {
+        const nx = x + dx,
+          ny = y + dy;
+        if (nx < 0 || ny < 0 || nx >= m || ny >= n || grid[nx][ny] === '#')
+          continue;
+
+        const newKeys = new Set(keys);
+        const cell = grid[nx][ny];
+
+        if (cell >= 'a' && cell <= 'f') newKeys.add(cell);
+        if (cell >= 'A' && cell <= 'F' && !newKeys.has(cell.toLowerCase()))
+          continue;
+
+        const state = `${nx},${ny},${Array.from(newKeys).sort().join('')}`;
+        if (!seen.has(state)) {
+          seen.add(state);
+          queue.push([nx, ny, newKeys]);
+        }
+      }
     }
 
-    const state = `${x},${y},${Array.from(keys).sort().join('')}`;
-    if (seen.has(state)) return;
-    seen.add(state);
-
-    for (const [dx, dy] of directions) {
-      const nx = x + dx,
-        ny = y + dy;
-      if (nx < 0 || ny < 0 || nx >= m || ny >= n || grid[nx][ny] === '#')
-        continue;
-
-      const newKeys = new Set(keys);
-      const cell = grid[nx][ny];
-
-      if (cell >= 'a' && cell <= 'f') newKeys.add(cell);
-      if (cell >= 'A' && cell <= 'F' && !newKeys.has(cell.toLowerCase()))
-        continue;
-
-      dfs(nx, ny, newKeys, steps + 1);
-    }
-
-    seen.delete(state); // Backtrack
+    steps++;
   }
-
-  dfs(startX, startY, new Set(), 0);
-  return minSteps === Infinity ? -1 : minSteps;
+  return -1;
 }
-
-// console.log(shortestPathAllKeys_others(['@a.', '#.A', 'b.B']));
