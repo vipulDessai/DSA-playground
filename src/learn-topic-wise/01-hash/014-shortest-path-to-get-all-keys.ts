@@ -47,16 +47,6 @@ function shortestPathAllKeys_my_implementation(grid: string[]): number {
       return;
     }
 
-    // NOTE:
-    // this is not as same as
-    // const state = `${r},${c},${Array.from(curKeysSet).sort().join()},${pathLength}`;
-    // do not add pathlength, coz it will lead to call stack overflow
-    const state = `${r},${c},${Array.from(curKeysSet).sort().join()}`;
-    if (visited.has(state)) {
-      return;
-    }
-    visited.add(state);
-
     if (
       cur.charAt(0) >= 'A'.charAt(0) &&
       cur.charAt(0) <= 'Z'.charAt(0) &&
@@ -64,6 +54,22 @@ function shortestPathAllKeys_my_implementation(grid: string[]): number {
     ) {
       return;
     }
+
+    // NOTE:
+    // this is not as same as
+    // const state = `${r},${c},${Array.from(curKeysSet).sort().join()},${pathLength}`;
+    // do not add pathlength, coz it will lead to call stack overflow
+    //
+    // also never have the visited node check before the return statement
+    // coz if you see after the below for loop we are removing the visited node
+    // so if this visited node was before those above return checks
+    // then the value added to the visited nodes will be stuck and we new path
+    // which might be smaller will never be checked
+    const state = `${r},${c},${Array.from(curKeysSet).sort().join()}`;
+    if (visited.has(state)) {
+      return;
+    }
+    visited.add(state);
 
     for (let i = 0; i < directions.length; i++) {
       const [dr, dc] = directions[i];
