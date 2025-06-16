@@ -57,7 +57,6 @@ int lastStoneWeight(vector<int>& stones) {
 
 ### Type 3 :other
 
-- https://leetcode.com/problems/meeting-rooms-ii/ - need to keep track of min Finish time among all finish time.
 - https://leetcode.com/problems/relative-ranks/
 - https://leetcode.com/problems/furthest-building-you-can-reach/
 - https://leetcode.com/problems/maximum-average-pass-ratio/ - comp fun
