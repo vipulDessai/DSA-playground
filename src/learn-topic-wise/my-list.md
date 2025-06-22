@@ -70,6 +70,7 @@
 - [Encode and Decode TinyURL](https://leetcode.com/problems/encode-and-decode-tinyurl/)
 - [Brick Wall](https://leetcode.com/problems/brick-wall/)
 - [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
+  - falls kind of in DP - [refer](./my-list#medium---dynamic-programming)
 - [Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/)
 - [Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
 - [Time Based Key-Value Store](https://leetcode.com/problems/time-based-key-value-store/)
@@ -182,6 +183,11 @@
   - uses hash as well - [refer - hash](./my-list.md#hard---hash), [refer - graph](./my-list.md#hard---graph)
 
 # Dynamic Programming
+
+## medium - Dynamic Programming
+
+- [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
+  - needs hash as well - [refer](./my-list#medium---hash)
 
 ## hard - Dynamic Programming
 
