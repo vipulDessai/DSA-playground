@@ -37,23 +37,23 @@ function searchRange_pure_binary_search(
   target: number,
 ): number[] {
   function findBound(isFirst: boolean): number {
-    let left = 0,
-      right = nums.length - 1;
-    let bound = -1;
+    let l = 0,
+      r = nums.length - 1,
+      bound = -1;
 
-    while (left <= right) {
-      const mid = Math.floor((left + right) / 2);
-      if (nums[mid] === target) {
-        bound = mid;
+    while (l <= r) {
+      const m = Math.floor(l + (r - l) / 2);
+      if (nums[m] === target) {
+        bound = m;
         if (isFirst) {
-          right = mid - 1;
+          r = m - 1;
         } else {
-          left = mid + 1;
+          l = m + 1;
         }
-      } else if (nums[mid] < target) {
-        left = mid + 1;
+      } else if (nums[m] < target) {
+        l = m + 1;
       } else {
-        right = mid - 1;
+        r = m - 1;
       }
     }
 
@@ -62,3 +62,5 @@ function searchRange_pure_binary_search(
 
   return [findBound(true), findBound(false)];
 }
+
+console.log(searchRange_pure_binary_search([5, 7, 7, 8, 8, 10], 8));
