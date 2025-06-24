@@ -152,6 +152,10 @@
 
 # Binary Search
 
+## easy - Binary Search
+
+- [Guess Number Higher or Lower](https://leetcode.com/problems/guess-number-higher-or-lower/)
+
 ## medium - Binary Search
 
 - [Minimum Limit of Balls in a Bag](https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/)
