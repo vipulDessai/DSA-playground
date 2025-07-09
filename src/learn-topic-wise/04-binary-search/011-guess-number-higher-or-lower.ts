@@ -9,6 +9,16 @@ export const url =
  *               otherwise return 0
  * var guess = function(num) {}
  */
+var guess = function (num) {
+  const target = 10;
+  if (num === target) {
+    return 0;
+  } else if (num > target) {
+    return -1;
+  } else {
+    return 1;
+  }
+};
 
 function guessNumber(n: number): number {
   let l = 1,
