@@ -1,4 +1,5 @@
 // https://www.interviewcake.com/concept/java/dijkstras-algorithm
+// https://www.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1
 class priorityQueue_Dijkstra<T> {
   private queue: { value: T; priority: number }[];
   constructor() {
@@ -86,6 +87,7 @@ class priorityQueue_Dijkstra<T> {
   }
 }
 
+// here the edges are uni-directional i.e. NOT bidirectional
 export function dijkstra(v: number, edges: number[][], src: number) {
   const res = Array(v).fill(Infinity);
 
@@ -140,6 +142,54 @@ export function dijkstra(v: number, edges: number[][], src: number) {
   return res;
 }
 
+// practice 14-07-2025 1300
+// export function dijkstra(v: number, edges: number[][], src: number) {
+//   const res = Array(v).fill(Infinity);
+
+//   const adjList = new Map<number, { d: number; w: number }[]>();
+//   for (const e of edges) {
+//     const [s, d, w] = e;
+
+//     if (!adjList.has(s)) {
+//       adjList.set(s, []);
+//     }
+
+//     adjList.get(s)?.push({ d, w });
+//   }
+
+//   function bfs() {
+//     const pQ = new priorityQueue_Dijkstra<number>();
+//     pQ.enqueue(src, 0);
+//     res[src] = 0;
+
+//     while (pQ.length > 0) {
+//       const q: { value: number; priority: number }[] = [];
+
+//       while (pQ.length) {
+//         q.push(pQ.dequeue()!);
+//       }
+
+//       for (const { value, priority: distance } of q) {
+//         const dstList = adjList.get(value);
+
+//         if (dstList) {
+//           for (const { d, w } of dstList) {
+//             const curDistance = distance + w;
+//             if (curDistance < res[d]) {
+//               pQ.enqueue(d, curDistance);
+//               res[d] = curDistance;
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+
+//   bfs();
+
+//   return res;
+// }
+
 console.log(
   dijkstra(
     3,
@@ -148,6 +198,20 @@ console.log(
       [1, 2, 3],
       [0, 2, 6],
     ],
-    0,
+    2,
   ),
 );
+
+// console.log(
+//   dijkstra(
+//     5,
+//     [
+//       [0, 1, 4],
+//       [0, 2, 8],
+//       [1, 4, 6],
+//       [2, 3, 2],
+//       [3, 4, 10],
+//     ],
+//     0,
+//   ),
+// );
