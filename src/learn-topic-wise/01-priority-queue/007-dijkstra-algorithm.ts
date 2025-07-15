@@ -87,49 +87,46 @@ class priorityQueue_Dijkstra<T> {
   }
 }
 
-// here the edges are uni-directional i.e. NOT bidirectional
+// here the edges are bidirectional
 export function dijkstra(v: number, edges: number[][], src: number) {
   const res = Array(v).fill(Infinity);
 
-  res[src] = 0;
+  const adjList = new Map<number, { dst: number; w: number }[]>();
+  for (const e of edges) {
+    const [s, d, w] = e;
 
-  const adjList: Record<number, { dst: number; w: number }[]> = {};
-  for (let i = 0; i < edges.length; ++i) {
-    const [s, d, w] = edges[i];
-
-    if (!adjList[s]) {
-      adjList[s] = [];
+    if (!adjList.has(s)) {
+      adjList.set(s, []);
     }
 
-    adjList[s].push({ dst: d, w });
+    if (!adjList.has(d)) {
+      adjList.set(d, []);
+    }
+
+    adjList.get(s)?.push({ dst: d, w });
+    adjList.get(d)?.push({ dst: s, w });
   }
 
   function bfs() {
     const pQ = new priorityQueue_Dijkstra<number>();
-
     pQ.enqueue(src, 0);
+    res[src] = 0;
 
     while (pQ.length > 0) {
-      const qLen = pQ.length;
-      const queuedNodes: { value: number; priority: number }[] = [];
-      for (let i = 0; i < qLen; i++) {
-        queuedNodes.push(pQ.dequeue()!);
+      const q: { value: number; priority: number }[] = [];
+
+      while (pQ.length) {
+        q.push(pQ.dequeue()!);
       }
 
-      for (let i = 0; i < queuedNodes.length; i++) {
-        const node = queuedNodes[i];
-
-        if (node) {
-          const curDistance = node.priority;
-          const connectedNodes = adjList[node.value];
-
-          if (connectedNodes) {
-            for (const curNode of connectedNodes) {
-              if (curDistance + curNode.w < res[curNode.dst]) {
-                pQ.enqueue(curNode.dst, curDistance + curNode.w);
-
-                res[curNode.dst] = curDistance + curNode.w;
-              }
+      for (const { value, priority: distance } of q) {
+        const dstList = adjList.get(value);
+        if (dstList) {
+          for (const { dst, w } of dstList) {
+            const curDistance = distance + w;
+            if (curDistance < res[dst]) {
+              pQ.enqueue(dst, curDistance);
+              res[dst] = curDistance;
             }
           }
         }
@@ -142,63 +139,28 @@ export function dijkstra(v: number, edges: number[][], src: number) {
   return res;
 }
 
-// practice 14-07-2025 1300
-// export function dijkstra(v: number, edges: number[][], src: number) {
-//   const res = Array(v).fill(Infinity);
-
-//   const adjList = new Map<number, { d: number; w: number }[]>();
-//   for (const e of edges) {
-//     const [s, d, w] = e;
-
-//     if (!adjList.has(s)) {
-//       adjList.set(s, []);
-//     }
-
-//     adjList.get(s)?.push({ d, w });
-//   }
-
-//   function bfs() {
-//     const pQ = new priorityQueue_Dijkstra<number>();
-//     pQ.enqueue(src, 0);
-//     res[src] = 0;
-
-//     while (pQ.length > 0) {
-//       const q: { value: number; priority: number }[] = [];
-
-//       while (pQ.length) {
-//         q.push(pQ.dequeue()!);
-//       }
-
-//       for (const { value, priority: distance } of q) {
-//         const dstList = adjList.get(value);
-
-//         if (dstList) {
-//           for (const { d, w } of dstList) {
-//             const curDistance = distance + w;
-//             if (curDistance < res[d]) {
-//               pQ.enqueue(d, curDistance);
-//               res[d] = curDistance;
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-
-//   bfs();
-
-//   return res;
-// }
+// console.log(
+//   dijkstra(
+//     3,
+//     [
+//       [0, 1, 1],
+//       [1, 2, 3],
+//       [0, 2, 6],
+//     ],
+//     2,
+//   ),
+// );
 
 console.log(
   dijkstra(
-    3,
+    4,
     [
       [0, 1, 1],
-      [1, 2, 3],
-      [0, 2, 6],
+      [0, 2, 20],
+      [1, 3, 1],
+      [2, 3, 1],
     ],
-    2,
+    0,
   ),
 );
 
