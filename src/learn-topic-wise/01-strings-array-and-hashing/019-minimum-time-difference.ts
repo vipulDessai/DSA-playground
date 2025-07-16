@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-time-difference
+export const url = 'https://leetcode.com/problems/minimum-time-difference';
 function findMinDifference(timePoints: string[]): number {
   const n = timePoints.length;
 

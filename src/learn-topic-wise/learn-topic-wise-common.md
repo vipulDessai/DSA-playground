@@ -1,8 +1,3 @@
-# Reference
-
-- https://leetcode.com/discuss/study-guide/2428868/Array-Problems-classified-into-different-types
-- https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/
-
 # Heap
 
 ## Type 1 - Kth min/max
@@ -55,7 +50,7 @@ int lastStoneWeight(vector<int>& stones) {
     }
 ```
 
-### Type 3 :other
+## Type 3 :other
 
 - https://leetcode.com/problems/relative-ranks/
 - https://leetcode.com/problems/furthest-building-you-can-reach/

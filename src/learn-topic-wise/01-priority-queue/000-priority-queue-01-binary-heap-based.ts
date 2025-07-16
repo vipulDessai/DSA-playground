@@ -145,8 +145,8 @@ export class BinaryHeapPriorityQueue<T> {
       if (
         this.hasRightChild(index) &&
         (this.isMinHeap
-          ? this.rightChild(index).priority < this.leftChild(index).priority
-          : this.rightChild(index).priority > this.leftChild(index).priority)
+          ? this.rightChild(index).priority < this.leftChild(index).priority // take the smallest out of left and right
+          : this.rightChild(index).priority > this.leftChild(index).priority) // take the largest out of left and right
       ) {
         childIndex = this.getRightChildIndex(index);
       }

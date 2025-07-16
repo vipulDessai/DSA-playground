@@ -3,11 +3,7 @@
 import { MaxHeap_FullSortWithBinarySearch } from './001-max-heap';
 
 function longestDiverseString(a: number, b: number, c: number): string {
-  const mH = new MaxHeap_FullSortWithBinarySearch<{ [key: string]: number }>(
-    (index: number) => {
-      return mH.sortedDsc[index];
-    },
-  );
+  const mH = new MaxHeap_FullSortWithBinarySearch<{ [key: string]: number }>();
   mH.push({ c });
   mH.push({ a });
   mH.push({ b });

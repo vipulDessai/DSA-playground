@@ -1,3 +1,8 @@
+# Reference
+
+- [Array](https://leetcode.com/discuss/study-guide/2428868/Array-Problems-classified-into-different-types)
+- [Strivers](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/)
+
 # pure array based
 
 ## easy - pure array based
@@ -121,6 +126,11 @@
 - [Dijktra Algorithm](https://www.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1)
 - [Find Subsequence of Length K With the Largest Sum](https://leetcode.com/problems/find-subsequence-of-length-k-with-the-largest-sum/)
 
+## medium - Heap
+
+- [Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/) - `TODO`
+  - can be solved using binary search - [refer](./my-list.md#medium---binary-search)
+
 # Two pointers
 
 ## easy - Two pointers
@@ -162,6 +172,8 @@
 - [Capacity To Ship Packages Within D Days](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days)
 - [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/description/)
 - [Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/)
+- [Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)
+  - can be solved using priority queue (heap) - [refer](./my-list.md#medium---heap)
 
 # Linked list
 

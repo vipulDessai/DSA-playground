@@ -1,7 +1,7 @@
 import { MaxHeap_FullSortWithBinarySearch } from './001-max-heap';
 
 class KthLargest {
-  mHeap = new MaxHeap_FullSortWithBinarySearch();
+  mHeap = new MaxHeap_FullSortWithBinarySearch<number>();
   kthIndex: number;
   constructor(k: number, nums: number[]) {
     this.kthIndex = k;
@@ -13,7 +13,7 @@ class KthLargest {
   add(val: number): number {
     this.mHeap.push(val);
 
-    return this.mHeap.array[this.kthIndex - 1];
+    return this.mHeap.sortedDsc[this.kthIndex - 1];
   }
 }
 

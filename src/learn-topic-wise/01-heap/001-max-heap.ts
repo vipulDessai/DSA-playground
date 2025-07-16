@@ -1,6 +1,5 @@
 /**
- * @description the searching and insert in the max heap will be done in O(log n)
- * and every insert will be repeated n number of times (i.e. for n size of array)
+ * @description the searching and insert in the max heap will be done in O(n log n)
  * @class MaxHeap_FullSortWithBinarySearch
  * @function push(number):void
  * @function get:max():number
@@ -10,9 +9,7 @@
  */
 export class MaxHeap_FullSortWithBinarySearch<T> {
   sortedDsc: T[];
-  getKey: (m: number) => T;
-  constructor(_getKey: (m: number) => T) {
-    this.getKey = _getKey;
+  constructor() {
     this.sortedDsc = [];
   }
 
@@ -24,13 +21,14 @@ export class MaxHeap_FullSortWithBinarySearch<T> {
 
     while (l < r) {
       const m = Math.floor(l + (r - l) / 2);
-      if (this.getKey(m) >= target) {
+      if (this.sortedDsc[m] >= target) {
         r = m;
       } else {
         l = m + 1;
       }
     }
 
+    // this is O(n log n)
     this.sortedDsc = [...arr.slice(0, l), target, ...arr.slice(l)];
   }
 
@@ -55,12 +53,7 @@ export class MaxHeap_FullSortWithBinarySearch<T> {
   }
 }
 
-const mHeap = new MaxHeap_FullSortWithBinarySearch<number>(function (
-  index: number,
-) {
-  // @ts-ignore
-  return this.sortedDsc[index];
-});
+const mHeap = new MaxHeap_FullSortWithBinarySearch<number>();
 mHeap.push(30);
 mHeap.push(1);
 mHeap.push(25);
