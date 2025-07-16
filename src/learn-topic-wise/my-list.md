@@ -3,9 +3,9 @@
 - [Array](https://leetcode.com/discuss/study-guide/2428868/Array-Problems-classified-into-different-types)
 - [Strivers](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/)
 
-# pure array based
+# Pure array based
 
-## easy - pure array based
+## easy - Pure array based
 
 - [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 - [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
@@ -26,12 +26,18 @@
 - [Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones/)
 - [Find Pivot Index](https://leetcode.com/problems/find-pivot-index/)
 
-# subarray whose sum is k
+# Subarray whose sum is k
 
-## medium - subarray whose sum is k
+## medium - Subarray whose sum is k
 
 - [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)
   - need a hash as well - [refer](./my-list.md#medium---hash)
+
+# String
+
+## medium - String
+
+- learn KMP Algorithm for Pattern Searching and find DSA problems for it and other searching patterns - `TODO`
 
 # Hash
 
