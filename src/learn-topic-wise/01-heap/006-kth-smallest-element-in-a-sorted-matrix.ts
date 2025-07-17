@@ -72,7 +72,7 @@ class PriorityQueue_kth_smallest_elem_sorted_matrix {
       return null;
     }
 
-    if (this.queue.length === 0) {
+    if (this.queue.length === 1) {
       return this.queue.pop()!.value;
     }
 
@@ -93,15 +93,18 @@ function kthSmallest(matrix: number[][], k: number): number {
     pQ.enqueue(matrix[i][0], i, 0);
   }
 
-  for (let i = 0; i < k - 1; ++i) {
+  let res = 0;
+  for (let i = 0; i < k; ++i) {
     const { num, row, col } = pQ.dequeue()!;
+
+    res = num;
 
     if (col + 1 < n) {
       pQ.enqueue(matrix[row][col + 1], row, col + 1);
     }
   }
 
-  return pQ.dequeue()!.num;
+  return res;
 }
 
 var matrix = [
@@ -109,12 +112,15 @@ var matrix = [
   [10, 11, 13],
   [12, 13, 15],
 ];
+var k = 8;
+
 matrix = [
   [1, 2, 3],
   [4, 5, 6],
   [7, 8, 9],
 ];
-var k = 9;
+k = 9;
+
 var out = kthSmallest(matrix, k);
 
 console.log(out);
