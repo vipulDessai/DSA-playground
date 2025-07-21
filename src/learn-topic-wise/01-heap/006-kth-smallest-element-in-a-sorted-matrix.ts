@@ -1,6 +1,11 @@
 export const url =
   '[Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)';
 
+/**
+ * brute force will be create a min priority queue
+ * populate the PQ and then pop out `k` items
+ */
+
 interface PQItem {
   value: {
     num: number;
