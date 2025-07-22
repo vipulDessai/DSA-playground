@@ -1,3 +1,6 @@
+export const url =
+  'https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/';
+
 function maxProfit(prices: number[]): number {
   let l = 0,
     r = 1,

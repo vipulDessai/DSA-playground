@@ -6,7 +6,6 @@ if you have to find kth largest/ k most frequent use Min Heap, and when you need
 
 - https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/ ------- MATRIX QUESTION
 - https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/
-- https://leetcode.com/problems/rearrange-string-k-distance-apart/
 
 ### Template:
 

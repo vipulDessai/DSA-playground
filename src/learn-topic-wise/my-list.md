@@ -8,6 +8,7 @@
 ## easy - Pure array based
 
 - [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+  - also is greedy - [refer](./my-list.md#easy---greedy)
 - [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
 - [Move Zeroes](https://leetcode.com/problems/move-zeroes/)
 - [Rotate Array](https://leetcode.com/problems/rotate-array/)
@@ -215,3 +216,10 @@
 
 - [Smallest Sufficient Team](https://leetcode.com/problems/smallest-sufficient-team/)
   - need bitwise as well - [refer](./my-list.md#hard---bitwise)
+
+# Greedy
+
+## easy - Greedy
+
+- [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+  - also is pure array - [refer](./my-list.md#easy---pure-array-based)
