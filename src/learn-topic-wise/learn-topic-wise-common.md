@@ -1,55 +1,6 @@
 # Heap
 
-## Type 1 - Kth min/max
-
-if you have to find kth largest/ k most frequent use Min Heap, and when you need kth smallest/ k list occuring use Max Heap
-
-- https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/ ------- MATRIX QUESTION
-- https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/
-
-### Template:
-
-```c#
-int function_kth(vector<int>& nums, int k) {
-    priority_queue <int, vector<int>, greater<int>> pq;   // Declare min/max heap.
-    for (auto i : nums) {   // one by one
-        pq.push(i);      // push all ele in the heap
-        if(pq.size() > k)   // if size gets more than k pop ele.
-            pq.pop();
-    }
-    return pq.top();    // return the top ele/ all elements
-}
-```
-
-## Type 2 : Take 2 elements from Heap Perform some operation and put again in the heap
-
-- https://leetcode.com/problems/last-stone-weight/
-- https://leetcode.com/problems/minimum-cost-to-connect-sticks/
-
-### Template
-
-```c#
-int lastStoneWeight(vector<int>& stones) {
-        priority_queue<int, vector<int>> heap; // Make a max heap <int> storing all the ele's in it
-        for(auto i : stones)
-            heap.push(i);
-
-        while(heap.size() > 1) {   // take top 2 elements and
-            int a = heap.top();
-            heap.pop();
-            int b = heap.top();
-            heap.pop();
-            if(a != b)
-                heap.push(function(a, b));  // a+b, a-b, a*b.... anything
-        }
-
-        if(heap.empty())
-            return 0;
-        return heap.top();   // return the last ele if any
-    }
-```
-
-## Type 3 :other
+## miscellaneous
 
 - https://leetcode.com/problems/relative-ranks/
 - https://leetcode.com/problems/furthest-building-you-can-reach/
@@ -64,7 +15,7 @@ when to use :
 1. Sorted Array or can sort it.
 2. Range of the Answer is known + can check is the given answer possible for the question. (Have to find min/max possible answer)
 
-## Types 1: Binary search on the range of answer
+## Binary search on the range of answer
 
 - https://leetcode.com/problems/sqrtx/
 - https://leetcode.com/problems/split-array-largest-sum/ - IMP
@@ -98,7 +49,7 @@ when to use :
     }
 ```
 
-## Type 2 : variation of Normal Binary Search
+## variation of Normal Binary Search
 
 - https://leetcode.com/problems/search-insert-position/
 - https://leetcode.com/problems/search-in-rotated-sorted-array/
