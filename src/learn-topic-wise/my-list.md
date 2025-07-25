@@ -46,7 +46,7 @@
 
 - [Two Sum](https://leetcode.com/problems/two-sum/)
   - can be solved using 2 pointers [refer](./my-list.md#easy---two-pointers)
-- [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
+- [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/), [Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/)
 - [Single Number](https://leetcode.com/problems/single-number/)
 - [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/)
 - [Happy Number](https://leetcode.com/problems/happy-number/)
