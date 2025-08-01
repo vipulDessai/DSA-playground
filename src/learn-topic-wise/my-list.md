@@ -102,12 +102,10 @@
 - [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
 - [Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/)
 - [Word Ladder I](https://leetcode.com/problems/word-ladder/), [Word Ladder II](https://leetcode.com/problems/word-ladder-ii/)
-
   - word ladder II - failing
     - uses bidirectional BFS, yet it fails at TLE 33
     - may be refer [this](https://leetcode.com/problems/word-ladder-ii/solutions/6319954/i-spent-3-hours-developing-this-fastest-approach-check-it-out-and-don-t-forget-to-drop-a-like/)
     - basically it needs effiecient BFS only using depth map
-
 - [Reconstruct Itinerary](https://leetcode.com/problems/reconstruct-itinerary/)
   - learn `001-eulerian-path-and-circuit.ts` as part of this
 - [Shortest Path to Get All Keys](https://leetcode.com/problems/shortest-path-to-get-all-keys/)
@@ -185,13 +183,22 @@
 
 ## easy - Two pointers
 
+### Single Array - Two pointers
+
 - [Two sum](https://leetcode.com/problems/two-sum/description/)
   - can be solved using hash [refer](./my-list.md#easy---hash)
 - [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
 
+### multiple array - Two pointers
+
+- [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) - `TODO`
+
 ## medium - Two pointers
 
+### Single Array - Two pointers
+
 - [Sort colors](https://leetcode.com/problems/sort-colors/)
+- [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
 
 # Linked list
 
