@@ -156,14 +156,11 @@ when to use :
 ## Two pointer in 1 Array
 
 - https://leetcode.com/problems/container-with-most-water/
-- https://leetcode.com/problems/3sum/
 - https://leetcode.com/problems/3sum-closest/
 - https://leetcode.com/problems/3sum-with-multiplicity/
-- https://leetcode.com/problems/4sum/
 - https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 - https://leetcode.com/problems/next-permutation/
 - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
-- https://leetcode.com/problems/move-zeroes/
 - https://leetcode.com/problems/intersection-of-two-arrays/
 - https://leetcode.com/problems/sort-transformed-array/
 - https://leetcode.com/problems/boats-to-save-people/
