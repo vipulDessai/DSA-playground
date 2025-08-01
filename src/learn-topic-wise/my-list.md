@@ -138,18 +138,6 @@
 - [Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/) - `TODO`
   - can be solved using binary search - [refer](./my-list.md#medium---binary-search)
 
-# Two pointers
-
-## easy - Two pointers
-
-- [Two sum](https://leetcode.com/problems/two-sum/description/)
-  - can be solved using hash [refer](./my-list.md#easy---hash)
-- [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
-
-## medium - Two pointers
-
-- [Sort colors](https://leetcode.com/problems/sort-colors/)
-
 # Sort
 
 ## cyclic sort
@@ -163,10 +151,15 @@
 
 ## medium - Sliding window
 
+### fixed length window - Sliding window
+
+- [Permutation in string](https://leetcode.com/problems/permutation-in-string/description/)
+
+### dynamic length window - Sliding window
+
 - [Arithmetic Slices](https://leetcode.com/problems/arithmetic-slices/description/)
 - [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
   - needs hash as well [refer](./my-list.md#medium---hash)
-- [Permutation in string](https://leetcode.com/problems/permutation-in-string/description/)
 
 # Binary Search
 
@@ -176,12 +169,29 @@
 
 ## medium - Binary Search
 
+### Range Based - Binary Search
+
 - [Minimum Limit of Balls in a Bag](https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/)
 - [Capacity To Ship Packages Within D Days](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days)
-- [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/description/)
-- [Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/)
 - [Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)
   - can be solved using priority queue (heap) - [refer](./my-list.md#medium---heap)
+
+### variation of normal binary search - Binary Search
+
+- [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/description/)
+- [Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/)
+
+# Two pointers
+
+## easy - Two pointers
+
+- [Two sum](https://leetcode.com/problems/two-sum/description/)
+  - can be solved using hash [refer](./my-list.md#easy---hash)
+- [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
+
+## medium - Two pointers
+
+- [Sort colors](https://leetcode.com/problems/sort-colors/)
 
 # Linked list
 
