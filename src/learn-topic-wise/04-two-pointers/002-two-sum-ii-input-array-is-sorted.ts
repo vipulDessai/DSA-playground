@@ -1,3 +1,5 @@
+export const url = "[Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)"
+
 function twoSum(numbers: number[], target: number): number[] {
   const n = numbers.length;
 
