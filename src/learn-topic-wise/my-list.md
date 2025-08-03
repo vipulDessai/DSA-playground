@@ -199,6 +199,7 @@
 
 - [Sort colors](https://leetcode.com/problems/sort-colors/)
 - [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
+- [3 Sum Closest](https://leetcode.com/problems/3sum-closest/description/), [3 Sum Multiplicity](https://leetcode.com/problems/3sum-with-multiplicity/)
 
 # Linked list
 
@@ -229,6 +230,8 @@
 
 - [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
   - needs hash as well - [refer](./my-list#medium---hash)
+- [Unique Paths](https://leetcode.com/problems/unique-paths/description/) - `TODO`
+  - can be also solved using Inverse Modulo - [refer](./my-list.md#medium---modulo)
 
 ## hard - Dynamic Programming
 
@@ -241,3 +244,12 @@
 
 - [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
   - also is pure array - [refer](./my-list.md#easy---pure-array-based)
+
+# Modulo
+
+## medium - Modulo
+
+### Inverse Modulo
+
+- [Unique Paths](https://leetcode.com/problems/unique-paths/description/) - `TODO`
+  - can be also solved using DP - [refer](./my-list.md#medium---dynamic-programming)
