@@ -199,7 +199,12 @@
 
 - [Sort colors](https://leetcode.com/problems/sort-colors/)
 - [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
-- [3 Sum Closest](https://leetcode.com/problems/3sum-closest/description/), [3 Sum Multiplicity](https://leetcode.com/problems/3sum-with-multiplicity/)
+- [3 Sum Closest](https://leetcode.com/problems/3sum-closest/description/)
+- [3 Sum Multiplicity](https://leetcode.com/problems/3sum-with-multiplicity/) - `TODO`
+  - uses 3 approaches
+    - smart AI combination formula
+    - combination formula using [inverse mod](./my-list.md#inverse-modulo)
+    - [dynamic programming](./my-list.md#medium---dynamic-programming)
 
 # Linked list
 
@@ -232,6 +237,9 @@
   - needs hash as well - [refer](./my-list#medium---hash)
 - [Unique Paths](https://leetcode.com/problems/unique-paths/description/) - `TODO`
   - can be also solved using Inverse Modulo - [refer](./my-list.md#medium---modulo)
+- [3 Sum Multiplicity](https://leetcode.com/problems/3sum-with-multiplicity/) - `TODO`
+  - [uses two pointer and DP](./my-list.md#medium---two-pointers)
+  - combination formula using [inverse mod](./my-list.md#inverse-modulo)
 
 ## hard - Dynamic Programming
 
@@ -253,3 +261,6 @@
 
 - [Unique Paths](https://leetcode.com/problems/unique-paths/description/) - `TODO`
   - can be also solved using DP - [refer](./my-list.md#medium---dynamic-programming)
+- [3 Sum Multiplicity](https://leetcode.com/problems/3sum-with-multiplicity/) - `TODO`
+  - [could be solved using dynamic programming](./my-list.md#medium---dynamic-programming)
+  - [or in combination with two pointer](./my-list.md#medium---two-pointers)

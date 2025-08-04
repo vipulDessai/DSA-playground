@@ -1,3 +1,5 @@
+export const url = '[Fast Exponenial](NA)';
+
 function factorial() {
   let ans = 1;
   let base = 2;
