@@ -90,12 +90,15 @@ function threeSumMulti_two_pointers_smart_ai_math_formula(
 
 // console.log(out);
 
+// TLE at 39/72
 function threeSumMulti_two_pointers_dp(arr: number[], target: number): number {
   const n = arr.length;
+
   arr.sort((a, b) => a - b);
 
-  let res = 0;
-  for (let i = 0; i < n - 2; ++i) {
+  let i = 0,
+    res = 0;
+  while (i < n - 2) {
     let l = i + 1;
     let r = n - 1;
 
@@ -107,22 +110,65 @@ function threeSumMulti_two_pointers_dp(arr: number[], target: number): number {
       } else if (sum > target) {
         --r;
       } else {
-        // TODO - use dp to find the count of 3 paired tuple
+        let c = 0;
+        const _lVal = arr[l],
+          _rVal = arr[r];
+
+        const memo = new Set<string>();
+
+        function dfs(_l: number, _r: number) {
+          if (memo.has([_l, _r].join())) {
+            return;
+          }
+
+          if (_l < _r) {
+            if (arr[_l] === _lVal && arr[_r] === _rVal) {
+              ++c;
+
+              memo.add([_l, _r].join());
+
+              if (l < _l) {
+                l = _l;
+              }
+              if (r > _r) {
+                r = _r;
+              }
+
+              dfs(_l + 1, _r);
+              dfs(_l, _r - 1);
+
+              return;
+            }
+          }
+
+          memo.add([_l, _r].join());
+        }
+
+        dfs(l, r);
+
+        res += c;
+
+        ++l;
+        --r;
       }
     }
+
+    ++i;
   }
 
   return res;
 }
 
 // var input = [1, 1, 2, 2, 3, 3, 4, 4],
-//   t = 8;
+//   t = 7;
 
 // input = [1, 1, 2, 2, 2, 2];
 // t = 5;
 
-// var out = threeSumMulti_two_pointers_dp(input, t);
+// input = [1, 1, 2, 2, 3, 4, 4, 4, 4];
+// t = 7;
 
+// var out = threeSumMulti_two_pointers_dp(input, t);
 // console.log(out);
 
 function threeSumMulti_two_pointers_mod_inverse_combination_formula(
@@ -151,6 +197,9 @@ function threeSumMulti_two_pointers_mod_inverse_combination_formula(
           break;
         }
 
+        // below count is NOT combination count, as we
+        // need to increment and decrement l and r so
+        // to cover entire array
         let leftCount = 1,
           rightCount = 1;
 
