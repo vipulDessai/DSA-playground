@@ -8,14 +8,17 @@ const fact: number[] = Array(MAX + 1).fill(1);
 const invFact: number[] = Array(MAX + 1).fill(1);
 
 // Modular exponentiation (Fermat's Little Theorem)
-function modPow(a: number, exp: number, mod: number): number {
+function modPow(a: number, exp: number): number {
   let result = 1;
-  a %= mod;
+
+  a %= MOD;
   while (exp > 0) {
-    if (exp % 2 === 1) result = (result * a) % mod;
-    a = (a * a) % mod;
+    if (exp % 2 === 1) result = (result * a) % MOD;
+
+    a = (a * a) % MOD;
     exp = Math.floor(exp / 2);
   }
+
   return result;
 }
 
@@ -24,18 +27,20 @@ function precomputeFactorials(): void {
   for (let i = 2; i <= MAX; i++) {
     fact[i] = (fact[i - 1] * i) % MOD;
   }
-  invFact[MAX] = modPow(fact[MAX], MOD - 2, MOD); // inverse of MAX!
+
+  invFact[MAX] = modPow(fact[MAX], MOD - 2); // inverse of MAX!
+
   for (let i = MAX - 1; i >= 0; i--) {
     invFact[i] = (invFact[i + 1] * (i + 1)) % MOD;
   }
 }
 
 // Modular-safe nCr
-function nCr(n: number, r: number): number {
+export function nCr(n: number, r: number): number {
+  precomputeFactorials();
+
   if (r < 0 || r > n) return 0;
   return (((fact[n] * invFact[r]) % MOD) * invFact[n - r]) % MOD;
 }
 
-// Example usage
-precomputeFactorials();
-console.log(nCr(10, 3)); // Output: 120
+console.log(nCr(10, 3));
