@@ -1,4 +1,6 @@
-export function longestConsecutive(nums: number[]) {
+export const url = "[Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/description/)"
+
+function longestConsecutive(nums: number[]) {
   const n = nums.length;
   const h = new Set<number>();
   for (let i = 0; i < n; ++i) {

@@ -1,7 +1,7 @@
 export const url = '[Combination Formula nCr - inverse mod](NA)';
 
 const MOD = 1e9 + 7;
-const MAX = 1e5; // Adjust based on problem constraints
+const MAX = 10; // Adjust based on problem constraints
 
 // Precompute factorials and inverse factorials
 const fact: number[] = Array(MAX + 1).fill(1);
@@ -37,9 +37,10 @@ function precomputeFactorials(): void {
 
 // Modular-safe nCr
 export function nCr(n: number, r: number): number {
+  if (r < 0 || r > n) return 0;
+
   precomputeFactorials();
 
-  if (r < 0 || r > n) return 0;
   return (((fact[n] * invFact[r]) % MOD) * invFact[n - r]) % MOD;
 }
 
