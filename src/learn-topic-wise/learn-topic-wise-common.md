@@ -155,9 +155,6 @@ when to use :
 
 ## Two pointer in 1 Array
 
-- https://leetcode.com/problems/3sum-closest/
-- https://leetcode.com/problems/3sum-with-multiplicity/
-- https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 - https://leetcode.com/problems/next-permutation/
 - https://leetcode.com/problems/intersection-of-two-arrays/
 - https://leetcode.com/problems/sort-transformed-array/
