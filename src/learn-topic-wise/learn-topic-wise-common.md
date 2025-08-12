@@ -8,12 +8,7 @@
 - https://leetcode.com/problems/remove-stones-to-minimize-the-total/ - need to keep track of max number of stones among all.
 - https://leetcode.com/problems/find-median-from-data-stream/
 
-# Binary Search - [leetcode link](https://leetcode.com/problems/binary-search/)
-
-when to use :
-
-1. Sorted Array or can sort it.
-2. Range of the Answer is known + can check is the given answer possible for the question. (Have to find min/max possible answer)
+# Binary Search
 
 ## Binary search on the range of answer
 
@@ -27,27 +22,6 @@ when to use :
 - https://leetcode.com/problems/magnetic-force-between-two-balls/
 - https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/
 - https://leetcode.com/problems/maximum-number-of-removable-characters/
-
-### Template:
-
-```c#
-// The range is like "GGGGGGGGGGGGBBBBBBB" you need to find first B
-    int firstBadVersion(int n) {
-        int left = left edge of answer;
-        int right = right edge of answer;
-        // if(corner case - first ele is answer) return 1st ele
-        while(left <= right) {
-            int mid = left + (right - left) / 2;   // find mid
-            if(isBadVersion(mid) && !isBadVersion(mid - 1))     // check if mid is answer or not.
-                return mid;
-            if(isBadVersion(m))       // check which side we should move left/ right
-                r = m - 1;
-            else
-                l = m + 1;
-        }
-        return n;        // at the end return right end point if answer not found
-    }
-```
 
 ## variation of Normal Binary Search
 
@@ -116,41 +90,6 @@ when to use :
 - https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/
 - https://leetcode.com/problems/minimum-difference-between-highest-and-lowest-of-k-scores/
 
-# Prefix Sum
-
-when to use :
-
-1. Use when we need to find answer of ranges but we dont update the elements
-2. only with subarray not with subsequence
-
-## Only PrefixSum
-
-- https://leetcode.com/problems/running-sum-of-1d-array/
-- https://leetcode.com/problems/range-sum-query-immutable/
-- https://leetcode.com/problems/range-addition/
-- https://leetcode.com/problems/car-pooling/
-- https://leetcode.com/problems/corporate-flight-bookings/
-- https://leetcode.com/problems/minimum-value-to-get-positive-step-by-step-sum/
-- https://leetcode.com/problems/sum-of-all-odd-length-subarrays/
-- https://leetcode.com/problems/sum-of-absolute-differences-in-a-sorted-array/
-- https://leetcode.com/problems/find-the-highest-altitude/
-- https://leetcode.com/problems/find-the-student-that-will-replace-the-chalk/
-
-## Only SuffexSum - PrefixSum + SuffexSum
-
-- https://leetcode.com/problems/find-pivot-index/
-- https://leetcode.com/problems/find-the-middle-index-in-array/
-- https://leetcode.com/problems/find-good-days-to-rob-the-bank/
-
-## PrefixSum + HashMap
-
-- https://leetcode.com/problems/subarray-sum-equals-k/
-- https://leetcode.com/problems/subarray-sums-divisible-by-k/
-
-## Others
-
-- https://leetcode.com/problems/product-of-array-except-self/
-
 # Two Pointer / Three Pointers
 
 ## Two pointer in 1 Array
@@ -181,3 +120,33 @@ when to use :
 - https://leetcode.com/problems/minimize-maximum-pair-sum-in-array/
 - https://leetcode.com/problems/rearrange-array-elements-by-sign/
 - https://leetcode.com/problems/partition-array-according-to-given-pivot/
+
+# Prefix Sum
+
+## Only PrefixSum
+
+- https://leetcode.com/problems/running-sum-of-1d-array/
+- https://leetcode.com/problems/range-sum-query-immutable/
+- https://leetcode.com/problems/range-addition/
+- https://leetcode.com/problems/car-pooling/
+- https://leetcode.com/problems/corporate-flight-bookings/
+- https://leetcode.com/problems/minimum-value-to-get-positive-step-by-step-sum/
+- https://leetcode.com/problems/sum-of-all-odd-length-subarrays/
+- https://leetcode.com/problems/sum-of-absolute-differences-in-a-sorted-array/
+- https://leetcode.com/problems/find-the-highest-altitude/
+- https://leetcode.com/problems/find-the-student-that-will-replace-the-chalk/
+
+## Only SuffexSum - PrefixSum + SuffexSum
+
+- https://leetcode.com/problems/find-pivot-index/
+- https://leetcode.com/problems/find-the-middle-index-in-array/
+- https://leetcode.com/problems/find-good-days-to-rob-the-bank/
+
+## PrefixSum + HashMap
+
+- https://leetcode.com/problems/subarray-sum-equals-k/
+- https://leetcode.com/problems/subarray-sums-divisible-by-k/
+
+## Others
+
+- https://leetcode.com/problems/product-of-array-except-self/
