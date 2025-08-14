@@ -54,11 +54,7 @@
 
 ## Fixed length sliding wd
 
-- https://leetcode.com/problems/contains-duplicate-ii/
-- https://leetcode.com/problems/find-all-anagrams-in-a-string/
-- https://leetcode.com/problems/permutation-in-string/
 - https://leetcode.com/problems/maximum-average-subarray-i/
-- https://leetcode.com/problems/subarray-product-less-than-k/
 - https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/
 - https://leetcode.com/problems/grumpy-bookstore-owner/
 - https://leetcode.com/problems/find-k-length-substrings-with-no-repeated-characters/
@@ -72,7 +68,6 @@
 
 ## variable length sliding wd
 
-- https://leetcode.com/problems/longest-substring-without-repeating-characters/
 - https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/
 - https://leetcode.com/problems/minimum-size-subarray-sum/
 - https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/
@@ -94,7 +89,6 @@
 
 ## Two pointer in 1 Array
 
-- https://leetcode.com/problems/next-permutation/
 - https://leetcode.com/problems/intersection-of-two-arrays/
 - https://leetcode.com/problems/sort-transformed-array/
 - https://leetcode.com/problems/boats-to-save-people/
@@ -105,7 +99,6 @@
 
 ## Two pointers in 2 array - Three pointers / Multiple pointers
 
-- https://leetcode.com/problems/sort-colors/
 - https://leetcode.com/problems/merge-sorted-array/
 - https://leetcode.com/problems/is-subsequence/
 

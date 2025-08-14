@@ -1,6 +1,6 @@
-export const foo = 'bar';
+export const url =
+  '[longest substring without repeating characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)';
 
-// https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
 function lengthOfLongestSubstring(s: string): number {
   const charSet = new Set();
   let l = 0;

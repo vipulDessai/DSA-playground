@@ -50,7 +50,7 @@ namespace learning_dsa_csharp._03_sliding_window._004_subarray_product_less_than
                     sum /= nums[dp_index];
                     dp_index++;
                 }
-                count += (i - dp_index + 1);
+                count += i - dp_index + 1;
             }
             return count;
         }

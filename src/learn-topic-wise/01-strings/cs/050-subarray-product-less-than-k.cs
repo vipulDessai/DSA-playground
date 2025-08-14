@@ -21,29 +21,4 @@ namespace learning_dsa_csharp._01_strings_arrays_hash._050_subarray_product_less
             return count;
         }
     }
-
-    internal class MySoln_From_replicating_othersSoln
-    {
-        public int NumSubarrayProductLessThanK(int[] nums, int k)
-        {
-            int n = nums.Length,
-                c = 0,
-                j = 0,
-                p = 1;
-            for (int i = 0; i < n; ++i)
-            {
-                p *= nums[i];
-
-                while (p >= k && j <= i)
-                {
-                    p /= nums[j];
-                    ++j;
-                }
-
-                c += (i - j + 1);
-            }
-
-            return c;
-        }
-    }
 }
