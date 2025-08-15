@@ -12,25 +12,11 @@
 
 ## Binary search on the range of answer
 
-- https://leetcode.com/problems/sqrtx/
-- https://leetcode.com/problems/split-array-largest-sum/ - IMP
-- https://leetcode.com/problems/first-bad-version/
-- https://leetcode.com/problems/koko-eating-bananas/
-- https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
+- https://leetcode.com/problems/split-array-largest-sum/ - VIMP
 - https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/
-- https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
-- https://leetcode.com/problems/magnetic-force-between-two-balls/
-- https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/
-- https://leetcode.com/problems/maximum-number-of-removable-characters/
 
 ## variation of Normal Binary Search
 
-- https://leetcode.com/problems/search-insert-position/
-- https://leetcode.com/problems/search-in-rotated-sorted-array/
-- https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
-- https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
-- https://leetcode.com/problems/guess-number-higher-or-lower/
-- https://leetcode.com/problems/search-in-a-sorted-array-of-unknown-size/
 - https://leetcode.com/problems/find-smallest-letter-greater-than-target/
 - https://leetcode.com/problems/find-target-indices-after-sorting-array/
 
