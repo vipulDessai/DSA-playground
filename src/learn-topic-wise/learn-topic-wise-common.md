@@ -42,9 +42,6 @@
 
 - https://leetcode.com/problems/shortest-subarray-with-sum-at-least-k/
 - https://leetcode.com/problems/grumpy-bookstore-owner/
-- https://leetcode.com/problems/find-k-length-substrings-with-no-repeated-characters/
-- https://leetcode.com/problems/minimum-swaps-to-group-all-1s-together/
-- https://leetcode.com/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/
 - https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/
 - https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/
 - https://leetcode.com/problems/distinct-numbers-in-each-subarray/
@@ -53,10 +50,6 @@
 
 ## variable length sliding wd
 
-- https://leetcode.com/problems/longest-substring-with-at-most-two-distinct-characters/
-- https://leetcode.com/problems/minimum-size-subarray-sum/
-- https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/
-- https://leetcode.com/problems/max-consecutive-ones-ii/
 - https://leetcode.com/problems/fruit-into-baskets/
 - https://leetcode.com/problems/binary-subarrays-with-sum/
 - https://leetcode.com/problems/max-consecutive-ones-iii/
