@@ -67,7 +67,7 @@
 
 ## Two pointer in 1 Array
 
-- https://leetcode.com/problems/intersection-of-two-arrays/
+- https://leetcode.com/problems/intersection-of-two-arrays/ - `TODO`
 - https://leetcode.com/problems/sort-transformed-array/
 - https://leetcode.com/problems/boats-to-save-people/
 - https://leetcode.com/problems/sort-array-by-parity/
