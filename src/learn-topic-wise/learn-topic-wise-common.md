@@ -50,7 +50,7 @@
 
 ## variable length sliding wd
 
-- https://leetcode.com/problems/fruit-into-baskets/
+- https://leetcode.com/problems/fruit-into-baskets/ - `TODO`
 - https://leetcode.com/problems/binary-subarrays-with-sum/
 - https://leetcode.com/problems/max-consecutive-ones-iii/
 - https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/
@@ -67,7 +67,6 @@
 
 ## Two pointer in 1 Array
 
-- https://leetcode.com/problems/intersection-of-two-arrays/ - `TODO`
 - https://leetcode.com/problems/sort-transformed-array/
 - https://leetcode.com/problems/boats-to-save-people/
 - https://leetcode.com/problems/sort-array-by-parity/
@@ -82,7 +81,6 @@
 
 ## Intervals are Given :
 
-- https://leetcode.com/problems/meeting-scheduler/
 - https://leetcode.com/problems/remove-element/
 - https://leetcode.com/problems/find-the-duplicate-number/
 - https://leetcode.com/problems/interval-list-intersections/

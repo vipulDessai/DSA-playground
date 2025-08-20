@@ -133,7 +133,7 @@
 
 ## medium - Heap
 
-- [Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/) - `TODO`
+- [Kth Smallest Element in a Sorted Matrix](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)
   - can be solved using binary search - [refer](./my-list.md#medium---binary-search)
 
 # Sort
@@ -188,6 +188,7 @@
 - [Two sum](https://leetcode.com/problems/two-sum/description/)
   - can be solved using hash [refer](./my-list.md#easy---hash)
 - [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
+- [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/description/)
 
 ### multiple array - Two pointers
 
@@ -200,11 +201,10 @@
 - [Sort colors](https://leetcode.com/problems/sort-colors/)
 - [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
 - [3 Sum Closest](https://leetcode.com/problems/3sum-closest/description/)
-- [3 Sum Multiplicity](https://leetcode.com/problems/3sum-with-multiplicity/) - `TODO`
-  - uses 3 approaches
-    - smart AI combination formula
-    - combination formula using [inverse mod](./my-list.md#inverse-modulo)
-    - [dynamic programming](./my-list.md#medium---dynamic-programming)
+- [3 Sum Multiplicity](https://leetcode.com/problems/3sum-with-multiplicity/)
+  - [dynamic programming is a overkill](./my-list.md#medium---dynamic-programming)
+- [Next Permutation](https://leetcode.com/problems/next-permutation)
+- [Fruits into baskets](https://leetcode.com/problems/fruit-into-baskets/description/) - `TODO AI's Map Solution`
 
 # Linked list
 
@@ -237,9 +237,8 @@
   - needs hash as well - [refer](./my-list#medium---hash)
 - [Unique Paths](https://leetcode.com/problems/unique-paths/description/) - `TODO`
   - can be also solved using Inverse Modulo - [refer](./my-list.md#medium---modulo)
-- [3 Sum Multiplicity](https://leetcode.com/problems/3sum-with-multiplicity/) - `TODO`
-  - [uses two pointer and DP](./my-list.md#medium---two-pointers)
-  - combination formula using [inverse mod](./my-list.md#inverse-modulo)
+- [3 Sum Multiplicity](https://leetcode.com/problems/3sum-with-multiplicity/)
+  - [Two pointers with nCr formula is the correct approach](./my-list.md#medium---two-pointers)
 
 ## hard - Dynamic Programming
 
@@ -261,6 +260,3 @@
 
 - [Unique Paths](https://leetcode.com/problems/unique-paths/description/) - `TODO`
   - can be also solved using DP - [refer](./my-list.md#medium---dynamic-programming)
-- [3 Sum Multiplicity](https://leetcode.com/problems/3sum-with-multiplicity/) - `TODO`
-  - [could be solved using dynamic programming](./my-list.md#medium---dynamic-programming)
-  - [or in combination with two pointer](./my-list.md#medium---two-pointers)
