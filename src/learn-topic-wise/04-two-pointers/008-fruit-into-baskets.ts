@@ -13,6 +13,7 @@ function totalFruit_pure_tp(fruits: number[]): number {
 
   let b1 = fruits[0];
   // handles cases like [3, 3, 3, 3, 3, 3] and [3, 3, 1]
+  // r < n - 1? coz in case all of them are equal then r = n - 1
   while (fruits[r] == b1 && r < n - 1) {
     ++r;
   }
@@ -65,8 +66,14 @@ function totalFruit_tp_map(fruits: number[]): number {
 
     while (count.size > 2) {
       const leftFruit = fruits[left];
+
+      // remove 1 from the count of fruit at left
       count.set(leftFruit, count.get(leftFruit)! - 1);
-      if (count.get(leftFruit) === 0) count.delete(leftFruit);
+
+      if (count.get(leftFruit) === 0) {
+        count.delete(leftFruit);
+      }
+
       left++;
     }
 
