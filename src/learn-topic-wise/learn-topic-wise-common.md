@@ -50,8 +50,8 @@
 
 ## variable length sliding wd
 
-- https://leetcode.com/problems/fruit-into-baskets/ - `TODO`
 - https://leetcode.com/problems/binary-subarrays-with-sum/
+- https://leetcode.com/problems/max-consecutive-ones-i
 - https://leetcode.com/problems/max-consecutive-ones-iii/
 - https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/
 - https://leetcode.com/problems/maximum-erasure-value/
