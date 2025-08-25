@@ -11,6 +11,14 @@ export function largestSubArray(nums: number[]): number {
     if (sumMap.has(prefixSum)) {
       max = Math.max(max, i - sumMap.get(prefixSum));
     } else {
+      // in case of finding only 1 largest subarray,
+      // we store the first index where the the current
+      // prefix sum had occurred
+      //
+      // this cant be outside the else part
+      // coz we need first index, having it outside the
+      // the else will give the last index where
+      // the current prefix sum had occurred
       sumMap.set(prefixSum, i);
     }
   }

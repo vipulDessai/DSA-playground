@@ -95,7 +95,8 @@
 - [LRU Cache](https://leetcode.com/problems/lru-cache/)
 - [Insert Delete GetRandom O(1) - Duplicates allowed](https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/)
 - [Binary subarrays with sum](https://leetcode.com/problems/binary-subarrays-with-sum/description/)
-  - can be solved using sliding window as well - [refer](./my-list.md#medium---sliding-window) - `TODO`
+  - uses kadane algorithm template
+  - needs prefix sum as well - [refer](./my-list.md#medium---prefix-sum)
 
 ## hard - Hash
 
@@ -160,8 +161,6 @@
 - [Arithmetic Slices](https://leetcode.com/problems/arithmetic-slices/description/)
 - [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
   - needs hash as well [refer](./my-list.md#medium---hash)
-- [Binary subarrays with sum](https://leetcode.com/problems/binary-subarrays-with-sum/description/)
-  - can be solved using hashmap + prefix window as well - [refer](./my-list.md#medium---hash) - `TODO`
 
 # Binary Search
 
@@ -209,6 +208,14 @@
   - [dynamic programming is a overkill](./my-list.md#medium---dynamic-programming)
 - [Next Permutation](https://leetcode.com/problems/next-permutation)
 - [Fruits into baskets](https://leetcode.com/problems/fruit-into-baskets/description/) - `TODO AI's Map Solution`
+
+# Prefix sum
+
+## medium - Prefix sum
+
+- [Binary subarrays with sum](https://leetcode.com/problems/binary-subarrays-with-sum/description/)
+  - uses kadane algorithm template
+  - needs hash map as well - [refer](./my-list.md#medium---hash)
 
 # Linked list
 

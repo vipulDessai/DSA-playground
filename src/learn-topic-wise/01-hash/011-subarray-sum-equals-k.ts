@@ -1,4 +1,5 @@
-// [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)
+export const url =
+  '[Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)';
 
 function subarraySum(nums: number[], k: number): number {
   const pMap = new Map<number, number>();
@@ -16,10 +17,17 @@ function subarraySum(nums: number[], k: number): number {
       count += cur;
     }
 
+    // here we want the count of all the subarray
+    // that's why we are storing the count of occurence of
+    // the current prefix sum
     pMap.set(prefixSum, (pMap.get(prefixSum) || 0) + 1);
   }
 
   return count;
 }
 
-export const foo = "bar";
+var nums = [1, 2, 3, -2, -1, -4, 1, 1, 2],
+  k = 3;
+var o = subarraySum(nums, k);
+
+console.log(o);
